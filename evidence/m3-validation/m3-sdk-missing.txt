@@ -1,0 +1,1 @@
+SDK environment missing. Create a separate Python 3.11 venv and install requirements-sdk-check.txt with --require-hashes --only-binary=:all:. Core does not require it.

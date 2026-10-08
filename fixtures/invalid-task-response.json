@@ -1,0 +1,11 @@
+{
+  "jsonrpc": "2.0",
+  "id": "invalid-fixture-request",
+  "result": {
+    "task": {
+      "id": "invalid-fixture-task",
+      "contextId": "invalid-fixture-context",
+      "status": {"state": "completed"}
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "slug": "a2a-recovery-lab",
+  "label": "final-main-sdk-read",
+  "argv": [
+    "py",
+    "-3.11",
+    "-m",
+    "a2a_recovery_lab",
+    "report",
+    "work/main-final-sdk-20261008/report.json"
+  ],
+  "cwd": "<local-portfolio>\\a2a-recovery-lab",
+  "started_at_utc": "2026-10-08T02:38:22.830301+00:00",
+  "duration_seconds": 0.234,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout": "PASS installed official SDK 1.1.5 | deterministic_mock_over_http | spec=1.0.1 wire=1.0\nChecks: 26 passed, 0 failed\nScope: installed SDK JSONRPC/protobuf interactions; full conformance not checked.\nMode: recorded_report_read; no fresh agent execution\n",
+  "stderr": "",
+  "scope": "independently executed by main; result alone does not imply full acceptance"
+}

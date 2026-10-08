@@ -1,0 +1,80 @@
+{
+  "checked_at_utc": "2026-10-08T02:28:40.223470+00:00",
+  "assertions_passed": true,
+  "core_interpreter_sdk_available": false,
+  "closed_port_observations": 4,
+  "cases": [
+    {
+      "name": "m3-sdk",
+      "checks": {
+        "passed": 26,
+        "failed": 0
+      },
+      "events": 139,
+      "stores": {
+        "coordinator": {
+          "tasks": 2,
+          "submissions": 2,
+          "states": [
+            "TASK_STATE_COMPLETED",
+            "TASK_STATE_CANCELED"
+          ]
+        },
+        "normalizer": {
+          "tasks": 2,
+          "submissions": 2,
+          "states": [
+            "TASK_STATE_COMPLETED",
+            "TASK_STATE_CANCELED"
+          ]
+        }
+      },
+      "closed_origins_observed": [
+        "http://127.0.0.1:63514",
+        "http://127.0.0.1:63513"
+      ],
+      "report_sha256": "810959fec20fb3bc461a021c14606b9d1bb32080b55fbe6287bbf89e7d6d2978"
+    },
+    {
+      "name": "m3-core-happy",
+      "checks": {
+        "passed": 10,
+        "failed": 0
+      },
+      "events": 43,
+      "stores": {
+        "coordinator": {
+          "tasks": 1,
+          "submissions": 1,
+          "states": [
+            "TASK_STATE_COMPLETED"
+          ]
+        },
+        "normalizer": {
+          "tasks": 1,
+          "submissions": 1,
+          "states": [
+            "TASK_STATE_COMPLETED"
+          ]
+        }
+      },
+      "closed_origins_observed": [
+        "http://127.0.0.1:63254",
+        "http://127.0.0.1:63253"
+      ],
+      "report_sha256": "ca3e169995708e2027aa6f5f0f927054859fd5078dc1932ee534cf1b2302f482"
+    }
+  ],
+  "runtime_package_count": 32,
+  "audited_wheel_count": 35,
+  "retained_license_files": 49,
+  "source_author_notices": {
+    "third_party\\sdk-licenses\\aiologic-0.17.1\\SOURCE-NOTICES.txt": "7f552c5975d1e0d412d2bd8fee068e797703faeb7a8b437a0ea2f28bd12cfbed",
+    "third_party\\sdk-licenses\\culsans-0.11.0\\SOURCE-NOTICES.txt": "08040eb4cee211b4f962cd9f2feaf0a63b5858bebdec23952f640fc7c6d4e99c"
+  },
+  "workflow_static_safeguards_checked": true,
+  "yaml_parser": "not_run; static text/pin/scope checks only",
+  "hosted_ci": "not_executed",
+  "linux_execution": "not_executed",
+  "free_gib": 32.99
+}

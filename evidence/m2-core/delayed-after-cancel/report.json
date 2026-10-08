@@ -1,0 +1,336 @@
+{
+  "report_schema": "1.1",
+  "implementation_version": "0.2.0",
+  "milestone": "M2",
+  "scenario": "delayed-after-cancel",
+  "execution_mode": "deterministic_mock_over_http",
+  "protocol_spec": "1.0.1",
+  "protocol_wire": "1.0",
+  "seed": 7,
+  "policy": {
+    "max_attempts": 12,
+    "deadline_seconds": 2.0,
+    "retry_delay_seconds": 0.01,
+    "peer_deduplication_assumed": false,
+    "unsafe_retry": false
+  },
+  "agents": {
+    "coordinator": "http://127.0.0.1:64930",
+    "normalizer": "http://127.0.0.1:64929"
+  },
+  "tasks": {
+    "parent": {
+      "contextId": "dd5df3e1-8691-4f04-a1a1-82bd77954834",
+      "id": "e7f7cbdc-d51d-411d-9b2a-c5f0a5b9e9a0",
+      "metadata": {
+        "cancelRequested": true,
+        "cancellationAttempts": 1,
+        "childAgentUrl": "http://127.0.0.1:64929",
+        "childTaskId": "1232a811-8f45-404d-85af-2ed3cafaa590",
+        "executionMode": "deterministic_mock_over_http",
+        "peerDeduplicationAssumed": false,
+        "remoteCancellation": {
+          "childTaskId": "1232a811-8f45-404d-85af-2ed3cafaa590",
+          "remoteState": "TASK_STATE_CANCELED",
+          "status": "acknowledged"
+        },
+        "remoteOutcome": "canceled_acknowledged",
+        "retrievalAttempts": 1,
+        "submissionAttempts": 1,
+        "submissionStarted": true,
+        "unsafeRetry": false
+      },
+      "status": {
+        "state": "TASK_STATE_CANCELED",
+        "timestamp": "2026-10-08T01:46:09.445Z"
+      }
+    },
+    "child": {
+      "artifacts": [],
+      "contextId": "dd5df3e1-8691-4f04-a1a1-82bd77954834",
+      "id": "1232a811-8f45-404d-85af-2ed3cafaa590",
+      "metadata": {
+        "cancelRequested": true,
+        "executionMode": "deterministic_mock_over_http"
+      },
+      "status": {
+        "state": "TASK_STATE_CANCELED",
+        "timestamp": "2026-10-08T01:46:09.517Z"
+      }
+    }
+  },
+  "peer_tasks_observed_by_harness": [
+    {
+      "artifacts": [],
+      "contextId": "dd5df3e1-8691-4f04-a1a1-82bd77954834",
+      "id": "1232a811-8f45-404d-85af-2ed3cafaa590",
+      "metadata": {
+        "cancelRequested": true,
+        "executionMode": "deterministic_mock_over_http"
+      },
+      "status": {
+        "state": "TASK_STATE_CANCELED",
+        "timestamp": "2026-10-08T01:46:09.517Z"
+      }
+    }
+  ],
+  "checks": [
+    {
+      "id": "two_http_endpoints",
+      "scope": "harness",
+      "result": "pass",
+      "expected": "Different origins; both receive RPC",
+      "actual": {
+        "coordinator": "http://127.0.0.1:64930",
+        "normalizer": "http://127.0.0.1:64929",
+        "rpc_receivers": [
+          "coordinator",
+          "normalizer"
+        ]
+      },
+      "evidence_events": [
+        1,
+        2,
+        10,
+        20,
+        29,
+        32,
+        39,
+        53,
+        57
+      ]
+    },
+    {
+      "id": "clean_teardown",
+      "scope": "harness",
+      "result": "pass",
+      "expected": true,
+      "actual": {
+        "coordinator": true,
+        "normalizer": true
+      },
+      "evidence_events": [
+        60,
+        61
+      ]
+    },
+    {
+      "id": "version_headers",
+      "scope": "protocol",
+      "result": "pass",
+      "expected": "1.0",
+      "actual": [
+        "1.0",
+        "1.0",
+        "1.0",
+        "1.0",
+        "1.0",
+        "1.0",
+        "1.0"
+      ],
+      "evidence_events": [
+        10,
+        20,
+        29,
+        32,
+        39,
+        53,
+        57
+      ],
+      "source": "https://github.com/a2aproject/A2A/blob/v1.0.1/docs/specification.md#36-versioning"
+    },
+    {
+      "id": "expected_parent_state",
+      "scope": "implementation_policy",
+      "result": "pass",
+      "expected": "TASK_STATE_CANCELED",
+      "actual": "TASK_STATE_CANCELED",
+      "evidence_events": [
+        12,
+        22,
+        33,
+        35,
+        40,
+        41,
+        45,
+        54,
+        58
+      ]
+    },
+    {
+      "id": "observed_peer_task_count",
+      "scope": "harness",
+      "result": "pass",
+      "expected": 1,
+      "actual": 1,
+      "evidence_events": [
+        11,
+        12,
+        21,
+        22,
+        35,
+        41,
+        45,
+        54,
+        58
+      ]
+    },
+    {
+      "id": "attempt_bounds",
+      "scope": "implementation_policy",
+      "result": "pass",
+      "expected": "Each operation <= 12",
+      "actual": {
+        "cancellationAttempts": 1,
+        "retrievalAttempts": 1,
+        "submissionAttempts": 1
+      },
+      "evidence_events": [
+        18,
+        27,
+        36
+      ]
+    },
+    {
+      "id": "no_duplicate_peer_tasks",
+      "scope": "implementation_policy",
+      "result": "pass",
+      "expected": "One peer task under safe policy",
+      "actual": 1,
+      "evidence_events": [
+        11,
+        21
+      ]
+    },
+    {
+      "id": "canceled_tasks_have_no_artifacts",
+      "scope": "implementation_policy",
+      "result": "pass",
+      "expected": "Both canceled; no late artifacts",
+      "actual": {
+        "parent": {
+          "contextId": "dd5df3e1-8691-4f04-a1a1-82bd77954834",
+          "id": "e7f7cbdc-d51d-411d-9b2a-c5f0a5b9e9a0",
+          "metadata": {
+            "cancelRequested": true,
+            "cancellationAttempts": 1,
+            "childAgentUrl": "http://127.0.0.1:64929",
+            "childTaskId": "1232a811-8f45-404d-85af-2ed3cafaa590",
+            "executionMode": "deterministic_mock_over_http",
+            "peerDeduplicationAssumed": false,
+            "remoteCancellation": {
+              "childTaskId": "1232a811-8f45-404d-85af-2ed3cafaa590",
+              "remoteState": "TASK_STATE_CANCELED",
+              "status": "acknowledged"
+            },
+            "remoteOutcome": "canceled_acknowledged",
+            "retrievalAttempts": 1,
+            "submissionAttempts": 1,
+            "submissionStarted": true,
+            "unsafeRetry": false
+          },
+          "status": {
+            "state": "TASK_STATE_CANCELED",
+            "timestamp": "2026-10-08T01:46:09.445Z"
+          }
+        },
+        "peer_tasks": [
+          {
+            "artifacts": [],
+            "contextId": "dd5df3e1-8691-4f04-a1a1-82bd77954834",
+            "id": "1232a811-8f45-404d-85af-2ed3cafaa590",
+            "metadata": {
+              "cancelRequested": true,
+              "executionMode": "deterministic_mock_over_http"
+            },
+            "status": {
+              "state": "TASK_STATE_CANCELED",
+              "timestamp": "2026-10-08T01:46:09.517Z"
+            }
+          }
+        ]
+      },
+      "evidence_events": [
+        33,
+        40,
+        49
+      ]
+    },
+    {
+      "id": "remote_cancel_acknowledged",
+      "scope": "implementation_policy",
+      "result": "pass",
+      "expected": "Acknowledged separately from local cancellation",
+      "actual": {
+        "childTaskId": "1232a811-8f45-404d-85af-2ed3cafaa590",
+        "remoteState": "TASK_STATE_CANCELED",
+        "status": "acknowledged"
+      },
+      "evidence_events": [
+        34,
+        43
+      ]
+    },
+    {
+      "id": "no_remote_claim_before_ack",
+      "scope": "implementation_policy",
+      "result": "pass",
+      "expected": "Remote-canceled claim follows observed peer acknowledgment",
+      "actual": {
+        "ack_events": [
+          42
+        ],
+        "claim_events": [
+          54
+        ]
+      },
+      "evidence_events": [
+        5,
+        8,
+        12,
+        13,
+        17,
+        22,
+        23,
+        35,
+        37,
+        41,
+        42,
+        45,
+        48,
+        54,
+        55,
+        58,
+        59
+      ]
+    },
+    {
+      "id": "delayed_response_discarded",
+      "scope": "implementation_policy",
+      "result": "pass",
+      "expected": "Late response and mock artifact cannot revive task",
+      "actual": true,
+      "evidence_events": [
+        30,
+        44,
+        49,
+        50
+      ]
+    }
+  ],
+  "summary": {
+    "passed": 11,
+    "failed": 0,
+    "expected_negative_failures": 0,
+    "inconclusive": 0,
+    "unexpected_failed": 0
+  },
+  "verdict": "pass",
+  "verdict_meaning": "expected_scenario_outcomes; safety-policy failures and inconclusive outcomes remain explicit",
+  "not_checked": [
+    "official SDK",
+    "full conformance",
+    "production or crash recovery"
+  ],
+  "evidence_file": "events.jsonl"
+}

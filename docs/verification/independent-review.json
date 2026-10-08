@@ -1,0 +1,55 @@
+{
+  "review_id": "FINAL",
+  "status": "passed",
+  "reviewed_at_utc": "2026-10-08T02:52:33.151247+00:00",
+  "assertions": "Fresh main34 unit tests and7 real loopback HTTP tests pass; prior main8 fault scenarios/99 assertions remain preserved. Installed official a2a-sdk1.1.5/httpx0.28.1 smoke passes26 checks and core quickstart10, two base-Python recorded-report reads pass, absent SDK returns expected2 and no passing evidence directory. Main independently checks literal normalized artifact/digest, parent-child provenance, four actual SQLite stores, completed/canceled state and no late canceled artifacts, contiguous event evidence and five concrete official SDK error classes. Four saved endpoints closed and no owned/unreadable Python processes. Actual32 installed versions,35 wheel hashes/metadata and both target active dependency-marker closures plus49 license/source records audited.",
+  "inspection": "Main inspected task persistence/state, JSONRPC1.0 profile, blocking/version/history/cancellation/duplicate/recovery/unsafe boundaries at M1/M2; final installed official SDK resolver/transport/type calls, HTTP trust_envFalse/owned-origin hooks, disabled tracing, missing-SDK preflight, base reader, documented core/optional quickstarts, architecture/scenario/contribution/limits and Apache/third-party attribution. Immutable checkout/setup-python source/license pins independently verified; serial public Windows/Linux CI jobs inspected, no hosted execution.",
+  "limitations": "Fresh deterministic mock over actual loopback HTTP; recorded report reads are replay evidence, not fresh/live model evaluations. A2A v1.0.1 source/1.0 JSONRPC subset with implementation-specific dedup/recovery policy, not conformance certification/distributed exactly-once/production authentication or restart reconciliation. Linux wheels/marker closure are statically audited but Linux/hostedCI not run. Google/crypto/OpenTelemetry API transitives are disclosed mandatory SDK closure with tracing off/no SDK extras;49 retained source/license records may include upstream Python source solely for attribution, not imported core. No exhaustive native legal/security/performance audit. Core remains standard-library based; optional installed SDK environment is separate. No final binary downloads/install/provider calls/publication/push/deploy.",
+  "source_file_count": 164,
+  "repository": "a2a-recovery-lab",
+  "scope": "Coordinating-agent review, separate from implementation worker; not third-party certification.",
+  "local_path_redaction": "Personal host prefixes replaced. Original receipt hashes below describe the unredacted local source; exports have separate hashes.",
+  "publication_change_scope": "README/AGENTS/contributor/context/evidence exports and ignore/attribute portability only. Runtime, tests, fixtures and dependency pins remain as accepted.",
+  "command_receipt_exports": [
+    {
+      "path": "docs/verification/main-command-00-final-main-sdk-health.json",
+      "source_receipt_sha256": "46ef51ab78029dab27ba48abec20a24a729a984ce240a6aee2ef7bd232a8fd70",
+      "export_sha256": "f2ff16dafbacd10a4853805af7d5fd6e2fbc9de12944ad6768d2df9685ccf17d"
+    },
+    {
+      "path": "docs/verification/main-command-01-final-main-sdk.json",
+      "source_receipt_sha256": "2146c527ed66a8cff05fd073966aeee4f67396e0dd0fb3e6fde447a68a6eed42",
+      "export_sha256": "12baae4e77f5af5f3d7beecba8bf7af67366990ee54fce127d36a95a0dfb84ee"
+    },
+    {
+      "path": "docs/verification/main-command-02-final-main-core.json",
+      "source_receipt_sha256": "50ae421a9c5dea748f8e9952d6abcce34e7c1e401fba2f630a76d43d3cee35cd",
+      "export_sha256": "f77680d765d92de5c2f1930506141271196544a65190b3f97f705f60defa081d"
+    },
+    {
+      "path": "docs/verification/main-command-03-final-main-sdk-read.json",
+      "source_receipt_sha256": "d8e60a455efe5c7d21acf06a923f02109aef0e44ea933225ddd3a64dc5fb1934",
+      "export_sha256": "d2d67c408fd645780d59269e4cf46bb1f455d8b935dae5521fb460ede8038a09"
+    },
+    {
+      "path": "docs/verification/main-command-04-final-main-core-read.json",
+      "source_receipt_sha256": "5bb346042f8810c7ae7845e5857f3339f512fef4d0f8c856bd568755bfa45949",
+      "export_sha256": "be2e3611695b1d17e10a37e1ecd24f492731be5adbcd1b87d1f846a13d58e5b9"
+    },
+    {
+      "path": "docs/verification/main-command-05-final-main-unit.json",
+      "source_receipt_sha256": "8ee7633307829ca12c0a8c7663d2b68d868c28de79df1b571f39554b027848bb",
+      "export_sha256": "90b18d391e08f39a76323f37f0e7c4215b41193c46de4652e95edfeb926633d9"
+    },
+    {
+      "path": "docs/verification/main-command-06-final-main-integration.json",
+      "source_receipt_sha256": "284d0876e7278308ef23efc1f3dd660a8f4dac06e405a22e3094b6d6b5f46943",
+      "export_sha256": "ba90875de83ef2777f45763aaf0790241bf91058f91eb1ac411ed0a7c4dda67f"
+    },
+    {
+      "path": "docs/verification/main-command-07-final-main-sdk-missing.json",
+      "source_receipt_sha256": "6e2f820feef8179e2185d8cb4b7c8a0414a58e03dc9f9b2b966067403d8f83a7",
+      "export_sha256": "101949beb0e5123c44154efcee989494921f27b07efa5d0674c0b95aaab6d5b9"
+    }
+  ]
+}

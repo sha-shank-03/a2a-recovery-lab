@@ -1,0 +1,372 @@
+{
+  "report_schema": "1.1",
+  "implementation_version": "0.2.0",
+  "milestone": "M2",
+  "scenario": "unsafe-retry-baseline",
+  "execution_mode": "deterministic_mock_over_http",
+  "protocol_spec": "1.0.1",
+  "protocol_wire": "1.0",
+  "seed": 7,
+  "policy": {
+    "max_attempts": 12,
+    "deadline_seconds": 2.0,
+    "retry_delay_seconds": 0.01,
+    "peer_deduplication_assumed": false,
+    "unsafe_retry": true
+  },
+  "agents": {
+    "coordinator": "http://127.0.0.1:64984",
+    "normalizer": "http://127.0.0.1:64983"
+  },
+  "tasks": {
+    "parent": {
+      "artifacts": [
+        {
+          "artifactId": "fff28c7d-ab4d-4323-817b-b543adfc4748",
+          "name": "coordinated-ticket",
+          "parts": [
+            {
+              "data": {
+                "childArtifactId": "0091c68a-7ff2-428a-8106-6eff8ea5edc8",
+                "childTaskId": "c8e6831c-0b8b-47ca-bd38-6fa5a1711add",
+                "normalizedTicket": {
+                  "input_sha256": "d37e90ba1e3f588afb51f9eb954856269c6eb06deb9e8247e2fd8dfce98ed027",
+                  "priority": "high",
+                  "ticket_id": "INC-0042",
+                  "title": "Checkout returns 502"
+                }
+              },
+              "mediaType": "application/json"
+            }
+          ]
+        }
+      ],
+      "contextId": "82c8a5b5-afb8-452a-8a60-0254170956da",
+      "id": "e43e94a2-7270-4f50-8c51-c9d1a258461b",
+      "metadata": {
+        "childAgentUrl": "http://127.0.0.1:64983",
+        "childArtifactId": "0091c68a-7ff2-428a-8106-6eff8ea5edc8",
+        "childTaskId": "c8e6831c-0b8b-47ca-bd38-6fa5a1711add",
+        "executionMode": "deterministic_mock_over_http",
+        "peerDeduplicationAssumed": false,
+        "retrievalAttempts": 1,
+        "submissionAttempts": 2,
+        "submissionStarted": true,
+        "unsafeRetry": true
+      },
+      "status": {
+        "state": "TASK_STATE_COMPLETED",
+        "timestamp": "2026-10-08T01:46:11.796Z"
+      }
+    },
+    "child": {
+      "artifacts": [
+        {
+          "artifactId": "0091c68a-7ff2-428a-8106-6eff8ea5edc8",
+          "name": "normalized-ticket",
+          "parts": [
+            {
+              "data": {
+                "input_sha256": "d37e90ba1e3f588afb51f9eb954856269c6eb06deb9e8247e2fd8dfce98ed027",
+                "priority": "high",
+                "ticket_id": "INC-0042",
+                "title": "Checkout returns 502"
+              },
+              "mediaType": "application/json"
+            }
+          ]
+        }
+      ],
+      "contextId": "82c8a5b5-afb8-452a-8a60-0254170956da",
+      "id": "c8e6831c-0b8b-47ca-bd38-6fa5a1711add",
+      "metadata": {
+        "executionMode": "deterministic_mock_over_http"
+      },
+      "status": {
+        "state": "TASK_STATE_COMPLETED",
+        "timestamp": "2026-10-08T01:46:11.752Z"
+      }
+    }
+  },
+  "peer_tasks_observed_by_harness": [
+    {
+      "artifacts": [
+        {
+          "artifactId": "0091c68a-7ff2-428a-8106-6eff8ea5edc8",
+          "name": "normalized-ticket",
+          "parts": [
+            {
+              "data": {
+                "input_sha256": "d37e90ba1e3f588afb51f9eb954856269c6eb06deb9e8247e2fd8dfce98ed027",
+                "priority": "high",
+                "ticket_id": "INC-0042",
+                "title": "Checkout returns 502"
+              },
+              "mediaType": "application/json"
+            }
+          ]
+        }
+      ],
+      "contextId": "82c8a5b5-afb8-452a-8a60-0254170956da",
+      "id": "c8e6831c-0b8b-47ca-bd38-6fa5a1711add",
+      "metadata": {
+        "executionMode": "deterministic_mock_over_http"
+      },
+      "status": {
+        "state": "TASK_STATE_COMPLETED",
+        "timestamp": "2026-10-08T01:46:11.752Z"
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "artifactId": "f16cd19a-1f3f-49e3-aaf8-72c2d659aebb",
+          "name": "normalized-ticket",
+          "parts": [
+            {
+              "data": {
+                "input_sha256": "d37e90ba1e3f588afb51f9eb954856269c6eb06deb9e8247e2fd8dfce98ed027",
+                "priority": "high",
+                "ticket_id": "INC-0042",
+                "title": "Checkout returns 502"
+              },
+              "mediaType": "application/json"
+            }
+          ]
+        }
+      ],
+      "contextId": "82c8a5b5-afb8-452a-8a60-0254170956da",
+      "id": "a3a40a31-5c4a-4d0d-8053-573183974377",
+      "metadata": {
+        "executionMode": "deterministic_mock_over_http"
+      },
+      "status": {
+        "state": "TASK_STATE_COMPLETED",
+        "timestamp": "2026-10-08T01:46:11.686Z"
+      }
+    }
+  ],
+  "checks": [
+    {
+      "id": "two_http_endpoints",
+      "scope": "harness",
+      "result": "pass",
+      "expected": "Different origins; both receive RPC",
+      "actual": {
+        "coordinator": "http://127.0.0.1:64984",
+        "normalizer": "http://127.0.0.1:64983",
+        "rpc_receivers": [
+          "coordinator",
+          "normalizer"
+        ]
+      },
+      "evidence_events": [
+        1,
+        2,
+        10,
+        19,
+        29,
+        39,
+        46,
+        50
+      ]
+    },
+    {
+      "id": "clean_teardown",
+      "scope": "harness",
+      "result": "pass",
+      "expected": true,
+      "actual": {
+        "coordinator": true,
+        "normalizer": true
+      },
+      "evidence_events": [
+        53,
+        54
+      ]
+    },
+    {
+      "id": "version_headers",
+      "scope": "protocol",
+      "result": "pass",
+      "expected": "1.0",
+      "actual": [
+        "1.0",
+        "1.0",
+        "1.0",
+        "1.0",
+        "1.0",
+        "1.0"
+      ],
+      "evidence_events": [
+        10,
+        19,
+        29,
+        39,
+        46,
+        50
+      ],
+      "source": "https://github.com/a2aproject/A2A/blob/v1.0.1/docs/specification.md#36-versioning"
+    },
+    {
+      "id": "expected_parent_state",
+      "scope": "implementation_policy",
+      "result": "pass",
+      "expected": "TASK_STATE_COMPLETED",
+      "actual": "TASK_STATE_COMPLETED",
+      "evidence_events": [
+        27,
+        31,
+        37,
+        40,
+        42,
+        43,
+        47,
+        51
+      ]
+    },
+    {
+      "id": "observed_peer_task_count",
+      "scope": "harness",
+      "result": "pass",
+      "expected": 2,
+      "actual": 2,
+      "evidence_events": [
+        11,
+        20,
+        30,
+        31,
+        40,
+        43,
+        47,
+        51
+      ]
+    },
+    {
+      "id": "attempt_bounds",
+      "scope": "implementation_policy",
+      "result": "pass",
+      "expected": "Each operation <= 12",
+      "actual": {
+        "retrievalAttempts": 1,
+        "submissionAttempts": 2
+      },
+      "evidence_events": [
+        17,
+        23,
+        26,
+        36
+      ]
+    },
+    {
+      "id": "no_duplicate_peer_tasks",
+      "scope": "implementation_policy",
+      "result": "fail",
+      "expected": "One peer task under safe policy",
+      "actual": 2,
+      "evidence_events": [
+        11,
+        20,
+        30
+      ],
+      "expected_negative_control": true
+    },
+    {
+      "id": "literal_normalization",
+      "scope": "implementation_policy",
+      "result": "pass",
+      "expected": {
+        "ticket_id": "INC-0042",
+        "title": "Checkout returns 502",
+        "priority": "high",
+        "input_sha256": "d37e90ba1e3f588afb51f9eb954856269c6eb06deb9e8247e2fd8dfce98ed027"
+      },
+      "actual": [
+        {
+          "input_sha256": "d37e90ba1e3f588afb51f9eb954856269c6eb06deb9e8247e2fd8dfce98ed027",
+          "priority": "high",
+          "ticket_id": "INC-0042",
+          "title": "Checkout returns 502"
+        },
+        {
+          "input_sha256": "d37e90ba1e3f588afb51f9eb954856269c6eb06deb9e8247e2fd8dfce98ed027",
+          "priority": "high",
+          "ticket_id": "INC-0042",
+          "title": "Checkout returns 502"
+        }
+      ],
+      "evidence_events": [
+        25,
+        31,
+        34,
+        40,
+        43,
+        47,
+        51
+      ]
+    },
+    {
+      "id": "accepted_before_ack_drop",
+      "scope": "harness",
+      "result": "pass",
+      "expected": "Peer task transaction observed before response drop",
+      "actual": [
+        {
+          "accepted_state": "TASK_STATE_SUBMITTED",
+          "agent": "normalizer",
+          "elapsed_ms": 188.0,
+          "event": "response_dropped_after_accept",
+          "fault_boundary": "after_agent_dispatch_before_http_reply",
+          "layer": "harness",
+          "message_id": "41e1dc47-2df1-5383-8553-afcbe5d2c35c",
+          "request_id": "1e7a4555-bd89-4eed-bab7-4fead99119f2",
+          "seq": 21,
+          "task_id": "a3a40a31-5c4a-4d0d-8053-573183974377"
+        }
+      ],
+      "evidence_events": [
+        11,
+        20,
+        21,
+        30
+      ]
+    },
+    {
+      "id": "expected_unsafe_negative_control",
+      "scope": "harness",
+      "result": "pass",
+      "expected": "Explicit unsafe mode produces two mock tasks",
+      "actual": {
+        "peer_tasks": 2,
+        "policy": {
+          "max_attempts": 12,
+          "deadline_seconds": 2.0,
+          "retry_delay_seconds": 0.01,
+          "peer_deduplication_assumed": false,
+          "unsafe_retry": true
+        }
+      },
+      "evidence_events": [
+        11,
+        16,
+        20,
+        30
+      ]
+    }
+  ],
+  "summary": {
+    "passed": 9,
+    "failed": 1,
+    "expected_negative_failures": 1,
+    "inconclusive": 0,
+    "unexpected_failed": 0
+  },
+  "verdict": "pass",
+  "verdict_meaning": "expected_scenario_outcomes; safety-policy failures and inconclusive outcomes remain explicit",
+  "not_checked": [
+    "official SDK",
+    "full conformance",
+    "production or crash recovery"
+  ],
+  "evidence_file": "events.jsonl"
+}

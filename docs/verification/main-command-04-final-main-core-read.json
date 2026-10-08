@@ -1,0 +1,20 @@
+{
+  "slug": "a2a-recovery-lab",
+  "label": "final-main-core-read",
+  "argv": [
+    "py",
+    "-3.11",
+    "-m",
+    "a2a_recovery_lab",
+    "report",
+    "work/main-final-core-20261008/report.json"
+  ],
+  "cwd": "<local-portfolio>\\a2a-recovery-lab",
+  "started_at_utc": "2026-10-08T02:38:23.200550+00:00",
+  "duration_seconds": 0.25,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout": "PASS happy-path | deterministic_mock_over_http | spec=1.0.1 wire=1.0\nChecks: 10 passed, 0 failed\nHTTP peers: coordinator=http://127.0.0.1:56479, normalizer=http://127.0.0.1:56478\nTask parent: 65aab07d-8179-40af-afac-879c9ba1db92 TASK_STATE_COMPLETED\nTask child: 75a62fbb-fb4e-43e8-98e8-7db17d83eb99 TASK_STATE_COMPLETED\nScope: M2 scoped task operations; mock computation; full conformance not checked.\nMode: recorded_report_read; no fresh agent execution\n",
+  "stderr": "",
+  "scope": "independently executed by main; result alone does not imply full acceptance"
+}

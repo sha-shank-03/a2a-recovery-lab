@@ -1,0 +1,110 @@
+{
+  "report_schema": "1.1",
+  "milestone": "M2",
+  "scenario": "core",
+  "seed": 7,
+  "execution_mode": "deterministic_mock_over_http",
+  "protocol_spec": "1.0.1",
+  "protocol_wire": "1.0",
+  "verdict": "pass",
+  "scenarios": [
+    {
+      "name": "happy-path",
+      "verdict": "pass",
+      "summary": {
+        "passed": 10,
+        "failed": 0
+      },
+      "report_file": "happy-path/report.json"
+    },
+    {
+      "name": "duplicate-request",
+      "verdict": "pass",
+      "summary": {
+        "passed": 8,
+        "failed": 0,
+        "expected_negative_failures": 0,
+        "inconclusive": 0,
+        "unexpected_failed": 0
+      },
+      "report_file": "duplicate-request/report.json"
+    },
+    {
+      "name": "lost-ack",
+      "verdict": "pass",
+      "summary": {
+        "passed": 10,
+        "failed": 0,
+        "expected_negative_failures": 0,
+        "inconclusive": 0,
+        "unexpected_failed": 0
+      },
+      "report_file": "lost-ack/report.json"
+    },
+    {
+      "name": "delayed-after-cancel",
+      "verdict": "pass",
+      "summary": {
+        "passed": 11,
+        "failed": 0,
+        "expected_negative_failures": 0,
+        "inconclusive": 0,
+        "unexpected_failed": 0
+      },
+      "report_file": "delayed-after-cancel/report.json"
+    },
+    {
+      "name": "peer-unavailable-recovers",
+      "verdict": "pass",
+      "summary": {
+        "passed": 9,
+        "failed": 0,
+        "expected_negative_failures": 0,
+        "inconclusive": 0,
+        "unexpected_failed": 0
+      },
+      "report_file": "peer-unavailable-recovers/report.json"
+    },
+    {
+      "name": "cancel-unavailable-recovers",
+      "verdict": "pass",
+      "summary": {
+        "passed": 11,
+        "failed": 0,
+        "expected_negative_failures": 0,
+        "inconclusive": 0,
+        "unexpected_failed": 0
+      },
+      "report_file": "cancel-unavailable-recovers/report.json"
+    },
+    {
+      "name": "recovery-exhausted",
+      "verdict": "pass",
+      "summary": {
+        "passed": 10,
+        "failed": 0,
+        "expected_negative_failures": 0,
+        "inconclusive": 0,
+        "unexpected_failed": 0
+      },
+      "report_file": "recovery-exhausted/report.json"
+    },
+    {
+      "name": "unsafe-retry-baseline",
+      "verdict": "pass",
+      "summary": {
+        "passed": 9,
+        "failed": 1,
+        "expected_negative_failures": 1,
+        "inconclusive": 0,
+        "unexpected_failed": 0
+      },
+      "report_file": "unsafe-retry-baseline/report.json"
+    }
+  ],
+  "summary": {
+    "scenario_count": 8,
+    "expected_outcomes_passed": 8,
+    "retained_safety_failures": 1
+  }
+}

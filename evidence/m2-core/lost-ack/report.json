@@ -1,0 +1,344 @@
+{
+  "report_schema": "1.1",
+  "implementation_version": "0.2.0",
+  "milestone": "M2",
+  "scenario": "lost-ack",
+  "execution_mode": "deterministic_mock_over_http",
+  "protocol_spec": "1.0.1",
+  "protocol_wire": "1.0",
+  "seed": 7,
+  "policy": {
+    "max_attempts": 12,
+    "deadline_seconds": 2.0,
+    "retry_delay_seconds": 0.01,
+    "peer_deduplication_assumed": true,
+    "unsafe_retry": false
+  },
+  "agents": {
+    "coordinator": "http://127.0.0.1:64917",
+    "normalizer": "http://127.0.0.1:64916"
+  },
+  "tasks": {
+    "parent": {
+      "artifacts": [
+        {
+          "artifactId": "7b44d36f-2f9a-4b11-8aca-44d355002ab2",
+          "name": "coordinated-ticket",
+          "parts": [
+            {
+              "data": {
+                "childArtifactId": "b74deb9a-5c2a-4955-b33e-bae571e2abc5",
+                "childTaskId": "d5935f3d-7727-43d5-b442-b52637d7c09a",
+                "normalizedTicket": {
+                  "input_sha256": "d37e90ba1e3f588afb51f9eb954856269c6eb06deb9e8247e2fd8dfce98ed027",
+                  "priority": "high",
+                  "ticket_id": "INC-0042",
+                  "title": "Checkout returns 502"
+                }
+              },
+              "mediaType": "application/json"
+            }
+          ]
+        }
+      ],
+      "contextId": "7875d4b3-2d3c-489e-a729-d274ecc25d01",
+      "id": "8c3603e1-7ef2-429c-9544-206304a58b06",
+      "metadata": {
+        "childAgentUrl": "http://127.0.0.1:64916",
+        "childArtifactId": "b74deb9a-5c2a-4955-b33e-bae571e2abc5",
+        "childTaskId": "d5935f3d-7727-43d5-b442-b52637d7c09a",
+        "executionMode": "deterministic_mock_over_http",
+        "peerDeduplicationAssumed": true,
+        "retrievalAttempts": 1,
+        "submissionAttempts": 2,
+        "submissionStarted": true,
+        "unsafeRetry": false
+      },
+      "status": {
+        "state": "TASK_STATE_COMPLETED",
+        "timestamp": "2026-10-08T01:46:08.968Z"
+      }
+    },
+    "child": {
+      "artifacts": [
+        {
+          "artifactId": "b74deb9a-5c2a-4955-b33e-bae571e2abc5",
+          "name": "normalized-ticket",
+          "parts": [
+            {
+              "data": {
+                "input_sha256": "d37e90ba1e3f588afb51f9eb954856269c6eb06deb9e8247e2fd8dfce98ed027",
+                "priority": "high",
+                "ticket_id": "INC-0042",
+                "title": "Checkout returns 502"
+              },
+              "mediaType": "application/json"
+            }
+          ]
+        }
+      ],
+      "contextId": "7875d4b3-2d3c-489e-a729-d274ecc25d01",
+      "id": "d5935f3d-7727-43d5-b442-b52637d7c09a",
+      "metadata": {
+        "executionMode": "deterministic_mock_over_http"
+      },
+      "status": {
+        "state": "TASK_STATE_COMPLETED",
+        "timestamp": "2026-10-08T01:46:08.865Z"
+      }
+    }
+  },
+  "peer_tasks_observed_by_harness": [
+    {
+      "artifacts": [
+        {
+          "artifactId": "b74deb9a-5c2a-4955-b33e-bae571e2abc5",
+          "name": "normalized-ticket",
+          "parts": [
+            {
+              "data": {
+                "input_sha256": "d37e90ba1e3f588afb51f9eb954856269c6eb06deb9e8247e2fd8dfce98ed027",
+                "priority": "high",
+                "ticket_id": "INC-0042",
+                "title": "Checkout returns 502"
+              },
+              "mediaType": "application/json"
+            }
+          ]
+        }
+      ],
+      "contextId": "7875d4b3-2d3c-489e-a729-d274ecc25d01",
+      "id": "d5935f3d-7727-43d5-b442-b52637d7c09a",
+      "metadata": {
+        "executionMode": "deterministic_mock_over_http"
+      },
+      "status": {
+        "state": "TASK_STATE_COMPLETED",
+        "timestamp": "2026-10-08T01:46:08.865Z"
+      }
+    }
+  ],
+  "checks": [
+    {
+      "id": "two_http_endpoints",
+      "scope": "harness",
+      "result": "pass",
+      "expected": "Different origins; both receive RPC",
+      "actual": {
+        "coordinator": "http://127.0.0.1:64917",
+        "normalizer": "http://127.0.0.1:64916",
+        "rpc_receivers": [
+          "coordinator",
+          "normalizer"
+        ]
+      },
+      "evidence_events": [
+        1,
+        2,
+        10,
+        18,
+        28,
+        35,
+        42,
+        46
+      ]
+    },
+    {
+      "id": "clean_teardown",
+      "scope": "harness",
+      "result": "pass",
+      "expected": true,
+      "actual": {
+        "coordinator": true,
+        "normalizer": true
+      },
+      "evidence_events": [
+        49,
+        50
+      ]
+    },
+    {
+      "id": "version_headers",
+      "scope": "protocol",
+      "result": "pass",
+      "expected": "1.0",
+      "actual": [
+        "1.0",
+        "1.0",
+        "1.0",
+        "1.0",
+        "1.0",
+        "1.0"
+      ],
+      "evidence_events": [
+        10,
+        18,
+        28,
+        35,
+        42,
+        46
+      ],
+      "source": "https://github.com/a2aproject/A2A/blob/v1.0.1/docs/specification.md#36-versioning"
+    },
+    {
+      "id": "expected_parent_state",
+      "scope": "implementation_policy",
+      "result": "pass",
+      "expected": "TASK_STATE_COMPLETED",
+      "actual": "TASK_STATE_COMPLETED",
+      "evidence_events": [
+        26,
+        30,
+        36,
+        38,
+        39,
+        43,
+        47
+      ]
+    },
+    {
+      "id": "observed_peer_task_count",
+      "scope": "harness",
+      "result": "pass",
+      "expected": 1,
+      "actual": 1,
+      "evidence_events": [
+        11,
+        19,
+        30,
+        36,
+        39,
+        43,
+        47
+      ]
+    },
+    {
+      "id": "attempt_bounds",
+      "scope": "implementation_policy",
+      "result": "pass",
+      "expected": "Each operation <= 12",
+      "actual": {
+        "retrievalAttempts": 1,
+        "submissionAttempts": 2
+      },
+      "evidence_events": [
+        16,
+        22,
+        25,
+        33
+      ]
+    },
+    {
+      "id": "no_duplicate_peer_tasks",
+      "scope": "implementation_policy",
+      "result": "pass",
+      "expected": "One peer task under safe policy",
+      "actual": 1,
+      "evidence_events": [
+        11,
+        19,
+        29
+      ]
+    },
+    {
+      "id": "literal_normalization",
+      "scope": "implementation_policy",
+      "result": "pass",
+      "expected": {
+        "ticket_id": "INC-0042",
+        "title": "Checkout returns 502",
+        "priority": "high",
+        "input_sha256": "d37e90ba1e3f588afb51f9eb954856269c6eb06deb9e8247e2fd8dfce98ed027"
+      },
+      "actual": [
+        {
+          "input_sha256": "d37e90ba1e3f588afb51f9eb954856269c6eb06deb9e8247e2fd8dfce98ed027",
+          "priority": "high",
+          "ticket_id": "INC-0042",
+          "title": "Checkout returns 502"
+        }
+      ],
+      "evidence_events": [
+        24,
+        30,
+        36,
+        39,
+        43,
+        47
+      ]
+    },
+    {
+      "id": "accepted_before_ack_drop",
+      "scope": "harness",
+      "result": "pass",
+      "expected": "Peer task transaction observed before response drop",
+      "actual": [
+        {
+          "accepted_state": "TASK_STATE_SUBMITTED",
+          "agent": "normalizer",
+          "elapsed_ms": 219.0,
+          "event": "response_dropped_after_accept",
+          "fault_boundary": "after_agent_dispatch_before_http_reply",
+          "layer": "harness",
+          "message_id": "a7e3c1ae-f30f-50ec-97c2-c5badcb0ee16",
+          "request_id": "444b4324-3de9-4bb2-83ca-2e360482c29b",
+          "seq": 20,
+          "task_id": "d5935f3d-7727-43d5-b442-b52637d7c09a"
+        }
+      ],
+      "evidence_events": [
+        11,
+        19,
+        20
+      ]
+    },
+    {
+      "id": "dedup_assumption_and_same_task",
+      "scope": "implementation_policy",
+      "result": "pass",
+      "expected": "Explicit assumption; retry finds same accepted task",
+      "actual": {
+        "policy": {
+          "max_attempts": 12,
+          "deadline_seconds": 2.0,
+          "retry_delay_seconds": 0.01,
+          "peer_deduplication_assumed": true,
+          "unsafe_retry": false
+        },
+        "dedup": [
+          {
+            "agent": "normalizer",
+            "context_id": "7875d4b3-2d3c-489e-a729-d274ecc25d01",
+            "elapsed_ms": 266.0,
+            "event": "submission_deduplicated",
+            "layer": "policy",
+            "message_id": "a7e3c1ae-f30f-50ec-97c2-c5badcb0ee16",
+            "seq": 29,
+            "task_id": "d5935f3d-7727-43d5-b442-b52637d7c09a"
+          }
+        ]
+      },
+      "evidence_events": [
+        16,
+        25,
+        29,
+        33
+      ]
+    }
+  ],
+  "summary": {
+    "passed": 10,
+    "failed": 0,
+    "expected_negative_failures": 0,
+    "inconclusive": 0,
+    "unexpected_failed": 0
+  },
+  "verdict": "pass",
+  "verdict_meaning": "expected_scenario_outcomes; safety-policy failures and inconclusive outcomes remain explicit",
+  "not_checked": [
+    "official SDK",
+    "full conformance",
+    "production or crash recovery"
+  ],
+  "evidence_file": "events.jsonl"
+}

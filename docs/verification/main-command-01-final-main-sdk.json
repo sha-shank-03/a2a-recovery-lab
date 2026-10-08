@@ -1,0 +1,18 @@
+{
+  "slug": "a2a-recovery-lab",
+  "label": "final-main-sdk",
+  "argv": [
+    "<local-portfolio>\\a2a-recovery-lab\\work\\sdk-check-venv\\Scripts\\python.exe",
+    "scripts/sdk_smoke.py",
+    "--out",
+    "work/main-final-sdk-20261008"
+  ],
+  "cwd": "<local-portfolio>\\a2a-recovery-lab",
+  "started_at_utc": "2026-10-08T02:38:19.679133+00:00",
+  "duration_seconds": 2.125,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout": "PASS installed official SDK 1.1.5 | 26 checks | deterministic_mock_over_http\nReport: <local-portfolio>\\a2a-recovery-lab\\work\\main-final-sdk-20261008\\report.json\n",
+  "stderr": "",
+  "scope": "independently executed by main; result alone does not imply full acceptance"
+}

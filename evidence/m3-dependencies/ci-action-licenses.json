@@ -1,0 +1,17 @@
+{
+  "checked_at_utc": "2026-10-08T02:27:16.306094+00:00",
+  "licenses": [
+    {
+      "repository": "actions/checkout",
+      "sha": "08c6903cd8c0fde910a37f88322edcfb5dd907a8",
+      "license": "MIT",
+      "source_url": "https://github.com/actions/checkout/blob/08c6903cd8c0fde910a37f88322edcfb5dd907a8/LICENSE"
+    },
+    {
+      "repository": "actions/setup-python",
+      "sha": "e797f83bcb11b83ae66e0230d6156d7c80228e7c",
+      "license": "MIT",
+      "source_url": "https://github.com/actions/setup-python/blob/e797f83bcb11b83ae66e0230d6156d7c80228e7c/LICENSE"
+    }
+  ]
+}

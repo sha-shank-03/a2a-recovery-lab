@@ -1,0 +1,6 @@
+a2a-sdk hashes verified; license/notice files retained
+Traceback (most recent call last):
+  File "C:\Users\shash\Documents\CodexPortfolios\agentic-ai-2026-10-07\a2a-recovery-lab\work\download_sdk_wheels.py", line 37, in <module>
+    assert names, (row['name'], target, 'No license/notice files in wheel')
+           ^^^^^
+AssertionError: ('aiologic', 'windows_amd64', 'No license/notice files in wheel')

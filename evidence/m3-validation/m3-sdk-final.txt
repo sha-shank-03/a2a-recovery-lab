@@ -1,0 +1,2 @@
+PASS installed official SDK 1.1.5 | 26 checks | deterministic_mock_over_http
+Report: C:\Users\shash\Documents\CodexPortfolios\agentic-ai-2026-10-07\a2a-recovery-lab\evidence\m3-sdk\report.json

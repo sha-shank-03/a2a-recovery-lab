@@ -1,0 +1,280 @@
+{
+  "report_schema": "1.1",
+  "implementation_version": "0.2.0",
+  "milestone": "M2",
+  "scenario": "ambiguous-submission",
+  "execution_mode": "deterministic_mock_over_http",
+  "protocol_spec": "1.0.1",
+  "protocol_wire": "1.0",
+  "seed": 7,
+  "policy": {
+    "max_attempts": 12,
+    "deadline_seconds": 2.0,
+    "retry_delay_seconds": 0.01,
+    "peer_deduplication_assumed": false,
+    "unsafe_retry": false
+  },
+  "agents": {
+    "coordinator": "http://127.0.0.1:61882",
+    "normalizer": "http://127.0.0.1:61881"
+  },
+  "tasks": {
+    "parent": {
+      "contextId": "b979f820-1538-40fb-9d9c-9f0297db3bf5",
+      "id": "588f2580-88b3-4e31-9f6c-e8ea67f69220",
+      "metadata": {
+        "executionMode": "deterministic_mock_over_http",
+        "failureType": "AmbiguousSubmission",
+        "peerDeduplicationAssumed": false,
+        "recoveryOutcome": "ambiguous_submission",
+        "remoteOutcome": "unknown_to_coordinator",
+        "submissionAttempts": 1,
+        "submissionStarted": true,
+        "unsafeRetry": false
+      },
+      "status": {
+        "state": "TASK_STATE_FAILED",
+        "timestamp": "2026-10-08T01:46:47.106Z"
+      }
+    },
+    "child": null
+  },
+  "peer_tasks_observed_by_harness": [
+    {
+      "artifacts": [
+        {
+          "artifactId": "ea88a4ca-d71c-4e94-b966-7defba9c75c7",
+          "name": "normalized-ticket",
+          "parts": [
+            {
+              "data": {
+                "input_sha256": "d37e90ba1e3f588afb51f9eb954856269c6eb06deb9e8247e2fd8dfce98ed027",
+                "priority": "high",
+                "ticket_id": "INC-0042",
+                "title": "Checkout returns 502"
+              },
+              "mediaType": "application/json"
+            }
+          ]
+        }
+      ],
+      "contextId": "b979f820-1538-40fb-9d9c-9f0297db3bf5",
+      "id": "7be97296-9d2c-48a5-85b6-27a51a5d9fd6",
+      "metadata": {
+        "executionMode": "deterministic_mock_over_http"
+      },
+      "status": {
+        "state": "TASK_STATE_COMPLETED",
+        "timestamp": "2026-10-08T01:46:47.106Z"
+      }
+    }
+  ],
+  "checks": [
+    {
+      "id": "two_http_endpoints",
+      "scope": "harness",
+      "result": "pass",
+      "expected": "Different origins; both receive RPC",
+      "actual": {
+        "coordinator": "http://127.0.0.1:61882",
+        "normalizer": "http://127.0.0.1:61881",
+        "rpc_receivers": [
+          "coordinator",
+          "normalizer"
+        ]
+      },
+      "evidence_events": [
+        1,
+        2,
+        10,
+        18,
+        31,
+        35
+      ]
+    },
+    {
+      "id": "clean_teardown",
+      "scope": "harness",
+      "result": "pass",
+      "expected": true,
+      "actual": {
+        "coordinator": true,
+        "normalizer": true
+      },
+      "evidence_events": [
+        38,
+        39
+      ]
+    },
+    {
+      "id": "version_headers",
+      "scope": "protocol",
+      "result": "pass",
+      "expected": "1.0",
+      "actual": [
+        "1.0",
+        "1.0",
+        "1.0",
+        "1.0"
+      ],
+      "evidence_events": [
+        10,
+        18,
+        31,
+        35
+      ],
+      "source": "https://github.com/a2aproject/A2A/blob/v1.0.1/docs/specification.md#36-versioning"
+    },
+    {
+      "id": "expected_parent_state",
+      "scope": "implementation_policy",
+      "result": "pass",
+      "expected": "TASK_STATE_FAILED",
+      "actual": "TASK_STATE_FAILED",
+      "evidence_events": [
+        26,
+        27,
+        28,
+        32,
+        36
+      ]
+    },
+    {
+      "id": "observed_peer_task_count",
+      "scope": "harness",
+      "result": "pass",
+      "expected": 1,
+      "actual": 1,
+      "evidence_events": [
+        11,
+        19,
+        28,
+        32,
+        36
+      ]
+    },
+    {
+      "id": "attempt_bounds",
+      "scope": "implementation_policy",
+      "result": "pass",
+      "expected": "Each operation <= 12",
+      "actual": {
+        "submissionAttempts": 1
+      },
+      "evidence_events": [
+        16,
+        22
+      ]
+    },
+    {
+      "id": "no_duplicate_peer_tasks",
+      "scope": "implementation_policy",
+      "result": "pass",
+      "expected": "One peer task under safe policy",
+      "actual": 1,
+      "evidence_events": [
+        11,
+        19
+      ]
+    },
+    {
+      "id": "literal_normalization",
+      "scope": "implementation_policy",
+      "result": "pass",
+      "expected": {
+        "ticket_id": "INC-0042",
+        "title": "Checkout returns 502",
+        "priority": "high",
+        "input_sha256": "d37e90ba1e3f588afb51f9eb954856269c6eb06deb9e8247e2fd8dfce98ed027"
+      },
+      "actual": [
+        {
+          "input_sha256": "d37e90ba1e3f588afb51f9eb954856269c6eb06deb9e8247e2fd8dfce98ed027",
+          "priority": "high",
+          "ticket_id": "INC-0042",
+          "title": "Checkout returns 502"
+        }
+      ],
+      "evidence_events": [
+        25,
+        28,
+        32,
+        36
+      ]
+    },
+    {
+      "id": "accepted_before_ack_drop",
+      "scope": "harness",
+      "result": "pass",
+      "expected": "Peer task transaction observed before response drop",
+      "actual": [
+        {
+          "accepted_state": "TASK_STATE_SUBMITTED",
+          "agent": "normalizer",
+          "elapsed_ms": 188.0,
+          "event": "response_dropped_after_accept",
+          "fault_boundary": "after_agent_dispatch_before_http_reply",
+          "layer": "harness",
+          "message_id": "fec70aa7-e9a6-59ed-85af-97fbb9d96c7e",
+          "request_id": "dc839611-0cfa-43f4-86da-4c43b0827f10",
+          "seq": 20,
+          "task_id": "7be97296-9d2c-48a5-85b6-27a51a5d9fd6"
+        }
+      ],
+      "evidence_events": [
+        11,
+        19,
+        20
+      ]
+    },
+    {
+      "id": "ambiguous_submission_not_resent",
+      "scope": "implementation_policy",
+      "result": "pass",
+      "expected": "One submission, inconclusive remote acceptance",
+      "actual": {
+        "executionMode": "deterministic_mock_over_http",
+        "failureType": "AmbiguousSubmission",
+        "peerDeduplicationAssumed": false,
+        "recoveryOutcome": "ambiguous_submission",
+        "remoteOutcome": "unknown_to_coordinator",
+        "submissionAttempts": 1,
+        "submissionStarted": true,
+        "unsafeRetry": false
+      },
+      "evidence_events": [
+        10,
+        18,
+        23,
+        31,
+        35
+      ]
+    },
+    {
+      "id": "remote_submission_outcome",
+      "scope": "implementation_policy",
+      "result": "inconclusive",
+      "expected": "Remote outcome remains unknown",
+      "actual": "unknown_to_coordinator",
+      "evidence_events": [
+        20,
+        23
+      ]
+    }
+  ],
+  "summary": {
+    "passed": 10,
+    "failed": 0,
+    "expected_negative_failures": 0,
+    "inconclusive": 1,
+    "unexpected_failed": 0
+  },
+  "verdict": "pass",
+  "verdict_meaning": "expected_scenario_outcomes; safety-policy failures and inconclusive outcomes remain explicit",
+  "not_checked": [
+    "official SDK",
+    "full conformance",
+    "production or crash recovery"
+  ],
+  "evidence_file": "events.jsonl"
+}

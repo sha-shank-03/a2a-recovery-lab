@@ -1,0 +1,11 @@
+PASS core expected outcomes | deterministic_mock_over_http | spec=1.0.1 wire=1.0
+happy-path: expected outcome PASS, retained failed checks=0
+duplicate-request: expected outcome PASS, retained failed checks=0
+lost-ack: expected outcome PASS, retained failed checks=0
+delayed-after-cancel: expected outcome PASS, retained failed checks=0
+peer-unavailable-recovers: expected outcome PASS, retained failed checks=0
+cancel-unavailable-recovers: expected outcome PASS, retained failed checks=0
+recovery-exhausted: expected outcome PASS, retained failed checks=0
+unsafe-retry-baseline: expected outcome PASS, retained failed checks=1
+Safety-policy failures remain visible: 1
+Mode: recorded_report_read; no fresh agent execution

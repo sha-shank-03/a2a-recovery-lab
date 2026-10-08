@@ -1,0 +1,12 @@
+A2A Recovery Lab
+Copyright 2026 A2A Recovery Lab contributors
+
+This project's protocol field names and scoped behavior are based on the
+Agent2Agent specification v1.0.1 from a2aproject/A2A, licensed under
+the Apache License, Version 2.0. See THIRD_PARTY.md for pinned sources.
+
+Optional verification uses independently installed a2a-sdk 1.1.5 and its
+exact pinned runtime dependency graph. Their code is not vendored here.
+Unmodified upstream license texts and SPDX author/license notices retained
+under third_party/sdk-licenses keep their individual licenses; see
+THIRD_PARTY.md and evidence/m3-dependencies for sources and hashes.

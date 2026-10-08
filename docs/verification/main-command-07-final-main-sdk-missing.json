@@ -1,0 +1,19 @@
+{
+  "slug": "a2a-recovery-lab",
+  "label": "final-main-sdk-missing",
+  "argv": [
+    "py",
+    "-3.11",
+    "scripts/sdk_smoke.py",
+    "--out",
+    "work/main-final-sdk-missing-20261008"
+  ],
+  "cwd": "<local-portfolio>\\a2a-recovery-lab",
+  "started_at_utc": "2026-10-08T02:39:50.082860+00:00",
+  "duration_seconds": 0.391,
+  "exit_code": 2,
+  "timed_out": false,
+  "stdout": "",
+  "stderr": "SDK environment missing. Create a separate Python 3.11 venv and install requirements-sdk-check.txt with --require-hashes --only-binary=:all:. Core does not require it.\n",
+  "scope": "independently executed by main; result alone does not imply full acceptance"
+}

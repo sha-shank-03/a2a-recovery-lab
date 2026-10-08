@@ -1,0 +1,8 @@
+PASS happy-path | deterministic_mock_over_http | spec=1.0.1 wire=1.0
+Checks: 10 passed, 0 failed
+HTTP peers: coordinator=http://127.0.0.1:63254, normalizer=http://127.0.0.1:63253
+Task parent: a50da75e-fc7b-4837-b2c0-464b42518fc6 TASK_STATE_COMPLETED
+Task child: f8915b26-6141-408e-99da-754a3716937d TASK_STATE_COMPLETED
+Scope: M2 scoped task operations; mock computation; full conformance not checked.
+Report: C:\Users\shash\Documents\CodexPortfolios\agentic-ai-2026-10-07\a2a-recovery-lab\evidence\m3-core-happy\report.json
+Trace: C:\Users\shash\Documents\CodexPortfolios\agentic-ai-2026-10-07\a2a-recovery-lab\evidence\m3-core-happy\events.jsonl

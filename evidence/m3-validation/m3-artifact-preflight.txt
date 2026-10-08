@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "C:\Users\shash\Documents\CodexPortfolios\agentic-ai-2026-10-07\a2a-recovery-lab\work\prepare_sdk_lock.py", line 17, in <module>
+    resolution = json.loads((root / 'work/sdk-resolution.json').read_text())
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\pathlib.py", line 1059, in read_text
+    return f.read()
+           ^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\encodings\cp1252.py", line 23, in decode
+    return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'charmap' codec can't decode byte 0x90 in position 6278: character maps to <undefined>

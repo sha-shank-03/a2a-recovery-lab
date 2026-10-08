@@ -1,0 +1,12 @@
+test_cli_demo_two_servers_literal_artifacts_and_teardown (test_http.HttpTests.test_cli_demo_two_servers_literal_artifacts_and_teardown) ... ok
+test_default_and_explicit_false_send_wait_for_completion (test_http.HttpTests.test_default_and_explicit_false_send_wait_for_completion) ... ok
+test_return_immediately_then_get_task (test_http.HttpTests.test_return_immediately_then_get_task) ... ok
+test_unknown_task_and_version_errors_over_http (test_http.HttpTests.test_unknown_task_and_version_errors_over_http) ... ok
+test_ambiguous_submission_without_contract_no_resend (test_recovery.RecoveryHttpTests.test_ambiguous_submission_without_contract_no_resend) ... ok
+test_deliberately_corrupted_peer_response_is_not_retried (test_recovery.RecoveryHttpTests.test_deliberately_corrupted_peer_response_is_not_retried) ... ok
+test_exact_eight_core_scenarios_and_retained_negative_failure (test_recovery.RecoveryHttpTests.test_exact_eight_core_scenarios_and_retained_negative_failure) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 9.424s
+
+OK

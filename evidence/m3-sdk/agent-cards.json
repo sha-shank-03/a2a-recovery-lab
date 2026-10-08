@@ -1,0 +1,72 @@
+{
+  "coordinator": {
+    "name": "coordinator",
+    "description": "Deterministic ticket mock; scoped SendMessage/GetTask/CancelTask/ListTasks",
+    "supportedInterfaces": [
+      {
+        "url": "http://127.0.0.1:63514/rpc",
+        "protocolBinding": "JSONRPC",
+        "protocolVersion": "1.0"
+      }
+    ],
+    "version": "0.2.0",
+    "capabilities": {
+      "streaming": false,
+      "pushNotifications": false,
+      "extendedAgentCard": false
+    },
+    "defaultInputModes": [
+      "application/json"
+    ],
+    "defaultOutputModes": [
+      "application/json"
+    ],
+    "skills": [
+      {
+        "id": "normalize-ticket",
+        "name": "Normalize fictional ticket",
+        "description": "Trim title whitespace and normalize priority using deterministic rules",
+        "tags": [
+          "mock",
+          "ticket",
+          "local"
+        ]
+      }
+    ]
+  },
+  "normalizer": {
+    "name": "normalizer",
+    "description": "Deterministic ticket mock; scoped SendMessage/GetTask/CancelTask/ListTasks",
+    "supportedInterfaces": [
+      {
+        "url": "http://127.0.0.1:63513/rpc",
+        "protocolBinding": "JSONRPC",
+        "protocolVersion": "1.0"
+      }
+    ],
+    "version": "0.2.0",
+    "capabilities": {
+      "streaming": false,
+      "pushNotifications": false,
+      "extendedAgentCard": false
+    },
+    "defaultInputModes": [
+      "application/json"
+    ],
+    "defaultOutputModes": [
+      "application/json"
+    ],
+    "skills": [
+      {
+        "id": "normalize-ticket",
+        "name": "Normalize fictional ticket",
+        "description": "Trim title whitespace and normalize priority using deterministic rules",
+        "tags": [
+          "mock",
+          "ticket",
+          "local"
+        ]
+      }
+    ]
+  }
+}

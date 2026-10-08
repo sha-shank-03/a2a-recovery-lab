@@ -1,0 +1,22 @@
+{
+  "slug": "a2a-recovery-lab",
+  "label": "final-main-integration",
+  "argv": [
+    "py",
+    "-3.11",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests/integration",
+    "-v"
+  ],
+  "cwd": "<local-portfolio>\\a2a-recovery-lab",
+  "started_at_utc": "2026-10-08T02:39:42.808488+00:00",
+  "duration_seconds": 7.047,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout": "",
+  "stderr": "test_cli_demo_two_servers_literal_artifacts_and_teardown (test_http.HttpTests.test_cli_demo_two_servers_literal_artifacts_and_teardown) ... ok\ntest_default_and_explicit_false_send_wait_for_completion (test_http.HttpTests.test_default_and_explicit_false_send_wait_for_completion) ... ok\ntest_return_immediately_then_get_task (test_http.HttpTests.test_return_immediately_then_get_task) ... ok\ntest_unknown_task_and_version_errors_over_http (test_http.HttpTests.test_unknown_task_and_version_errors_over_http) ... ok\ntest_ambiguous_submission_without_contract_no_resend (test_recovery.RecoveryHttpTests.test_ambiguous_submission_without_contract_no_resend) ... ok\ntest_deliberately_corrupted_peer_response_is_not_retried (test_recovery.RecoveryHttpTests.test_deliberately_corrupted_peer_response_is_not_retried) ... ok\ntest_exact_eight_core_scenarios_and_retained_negative_failure (test_recovery.RecoveryHttpTests.test_exact_eight_core_scenarios_and_retained_negative_failure) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 6.786s\n\nOK\n",
+  "scope": "independently executed by main; result alone does not imply full acceptance"
+}

@@ -1,0 +1,8 @@
+{
+  "checked_at_utc": "2026-10-08T02:29:55.4266413Z",
+  "command": "Get-CimInstance Win32_Process python.exe/pythonw.exe/py.exe",
+  "exit_code": 0,
+  "observed_processes": [],
+  "count": 0,
+  "scope": "Read-only post-M3 inventory; no processes terminated."
+}

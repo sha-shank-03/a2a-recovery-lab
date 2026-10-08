@@ -1,0 +1,7 @@
+{
+  "checked_at_utc": "2026-10-08T01:48:22Z",
+  "command": "Get-CimInstance Win32_Process -Filter \"Name = 'python.exe' OR Name = 'pythonw.exe' OR Name = 'py.exe'\" | Select-Object ProcessId,Name,CommandLine | ConvertTo-Json -Depth 3",
+  "exit_code": 0,
+  "observed_processes": [],
+  "scope": "Read-only process inventory after all M2 Python commands exited; no processes were terminated."
+}

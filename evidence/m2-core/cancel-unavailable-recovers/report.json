@@ -1,0 +1,397 @@
+{
+  "report_schema": "1.1",
+  "implementation_version": "0.2.0",
+  "milestone": "M2",
+  "scenario": "cancel-unavailable-recovers",
+  "execution_mode": "deterministic_mock_over_http",
+  "protocol_spec": "1.0.1",
+  "protocol_wire": "1.0",
+  "seed": 7,
+  "policy": {
+    "max_attempts": 12,
+    "deadline_seconds": 2.0,
+    "retry_delay_seconds": 0.01,
+    "peer_deduplication_assumed": false,
+    "unsafe_retry": false
+  },
+  "agents": {
+    "coordinator": "http://127.0.0.1:64955",
+    "normalizer": "http://127.0.0.1:64954"
+  },
+  "tasks": {
+    "parent": {
+      "contextId": "15f75faf-529b-4cdc-b2fc-30eadc095cf1",
+      "id": "9fa77dd0-583e-4491-9ddb-a06c78c914eb",
+      "metadata": {
+        "cancelRequested": true,
+        "cancellationAttempts": 3,
+        "childAgentUrl": "http://127.0.0.1:64954",
+        "childTaskId": "86d19753-15d9-4ff3-8fd9-879430cfe8e3",
+        "executionMode": "deterministic_mock_over_http",
+        "peerDeduplicationAssumed": false,
+        "remoteCancellation": {
+          "childTaskId": "86d19753-15d9-4ff3-8fd9-879430cfe8e3",
+          "remoteState": "TASK_STATE_CANCELED",
+          "status": "acknowledged"
+        },
+        "remoteOutcome": "canceled_acknowledged",
+        "retrievalAttempts": 1,
+        "submissionAttempts": 1,
+        "submissionStarted": true,
+        "unsafeRetry": false
+      },
+      "status": {
+        "state": "TASK_STATE_CANCELED",
+        "timestamp": "2026-10-08T01:46:10.808Z"
+      }
+    },
+    "child": {
+      "artifacts": [],
+      "contextId": "15f75faf-529b-4cdc-b2fc-30eadc095cf1",
+      "id": "86d19753-15d9-4ff3-8fd9-879430cfe8e3",
+      "metadata": {
+        "cancelRequested": true,
+        "executionMode": "deterministic_mock_over_http"
+      },
+      "status": {
+        "state": "TASK_STATE_CANCELED",
+        "timestamp": "2026-10-08T01:46:10.950Z"
+      }
+    }
+  },
+  "peer_tasks_observed_by_harness": [
+    {
+      "artifacts": [],
+      "contextId": "15f75faf-529b-4cdc-b2fc-30eadc095cf1",
+      "id": "86d19753-15d9-4ff3-8fd9-879430cfe8e3",
+      "metadata": {
+        "cancelRequested": true,
+        "executionMode": "deterministic_mock_over_http"
+      },
+      "status": {
+        "state": "TASK_STATE_CANCELED",
+        "timestamp": "2026-10-08T01:46:10.950Z"
+      }
+    }
+  ],
+  "checks": [
+    {
+      "id": "two_http_endpoints",
+      "scope": "harness",
+      "result": "pass",
+      "expected": "Different origins; both receive RPC",
+      "actual": {
+        "coordinator": "http://127.0.0.1:64955",
+        "normalizer": "http://127.0.0.1:64954",
+        "rpc_receivers": [
+          "coordinator",
+          "normalizer"
+        ]
+      },
+      "evidence_events": [
+        1,
+        2,
+        10,
+        20,
+        30,
+        31,
+        40,
+        43,
+        53,
+        59,
+        69,
+        73
+      ]
+    },
+    {
+      "id": "clean_teardown",
+      "scope": "harness",
+      "result": "pass",
+      "expected": true,
+      "actual": {
+        "coordinator": true,
+        "normalizer": true
+      },
+      "evidence_events": [
+        76,
+        77
+      ]
+    },
+    {
+      "id": "version_headers",
+      "scope": "protocol",
+      "result": "pass",
+      "expected": "1.0",
+      "actual": [
+        "1.0",
+        "1.0",
+        "1.0",
+        "1.0",
+        "1.0",
+        "1.0",
+        "1.0",
+        "1.0",
+        "1.0",
+        "1.0"
+      ],
+      "evidence_events": [
+        10,
+        20,
+        30,
+        31,
+        40,
+        43,
+        53,
+        59,
+        69,
+        73
+      ],
+      "source": "https://github.com/a2aproject/A2A/blob/v1.0.1/docs/specification.md#36-versioning"
+    },
+    {
+      "id": "expected_parent_state",
+      "scope": "implementation_policy",
+      "result": "pass",
+      "expected": "TASK_STATE_CANCELED",
+      "actual": "TASK_STATE_CANCELED",
+      "evidence_events": [
+        12,
+        22,
+        32,
+        34,
+        37,
+        45,
+        61,
+        62,
+        70,
+        74
+      ]
+    },
+    {
+      "id": "observed_peer_task_count",
+      "scope": "harness",
+      "result": "pass",
+      "expected": 1,
+      "actual": 1,
+      "evidence_events": [
+        11,
+        12,
+        21,
+        22,
+        32,
+        37,
+        45,
+        62,
+        70,
+        74
+      ]
+    },
+    {
+      "id": "attempt_bounds",
+      "scope": "implementation_policy",
+      "result": "pass",
+      "expected": "Each operation <= 12",
+      "actual": {
+        "cancellationAttempts": 3,
+        "retrievalAttempts": 1,
+        "submissionAttempts": 1
+      },
+      "evidence_events": [
+        18,
+        28,
+        36,
+        50,
+        51,
+        56,
+        57
+      ]
+    },
+    {
+      "id": "no_duplicate_peer_tasks",
+      "scope": "implementation_policy",
+      "result": "pass",
+      "expected": "One peer task under safe policy",
+      "actual": 1,
+      "evidence_events": [
+        11,
+        21
+      ]
+    },
+    {
+      "id": "canceled_tasks_have_no_artifacts",
+      "scope": "implementation_policy",
+      "result": "pass",
+      "expected": "Both canceled; no late artifacts",
+      "actual": {
+        "parent": {
+          "contextId": "15f75faf-529b-4cdc-b2fc-30eadc095cf1",
+          "id": "9fa77dd0-583e-4491-9ddb-a06c78c914eb",
+          "metadata": {
+            "cancelRequested": true,
+            "cancellationAttempts": 3,
+            "childAgentUrl": "http://127.0.0.1:64954",
+            "childTaskId": "86d19753-15d9-4ff3-8fd9-879430cfe8e3",
+            "executionMode": "deterministic_mock_over_http",
+            "peerDeduplicationAssumed": false,
+            "remoteCancellation": {
+              "childTaskId": "86d19753-15d9-4ff3-8fd9-879430cfe8e3",
+              "remoteState": "TASK_STATE_CANCELED",
+              "status": "acknowledged"
+            },
+            "remoteOutcome": "canceled_acknowledged",
+            "retrievalAttempts": 1,
+            "submissionAttempts": 1,
+            "submissionStarted": true,
+            "unsafeRetry": false
+          },
+          "status": {
+            "state": "TASK_STATE_CANCELED",
+            "timestamp": "2026-10-08T01:46:10.808Z"
+          }
+        },
+        "peer_tasks": [
+          {
+            "artifacts": [],
+            "contextId": "15f75faf-529b-4cdc-b2fc-30eadc095cf1",
+            "id": "86d19753-15d9-4ff3-8fd9-879430cfe8e3",
+            "metadata": {
+              "cancelRequested": true,
+              "executionMode": "deterministic_mock_over_http"
+            },
+            "status": {
+              "state": "TASK_STATE_CANCELED",
+              "timestamp": "2026-10-08T01:46:10.950Z"
+            }
+          }
+        ]
+      },
+      "evidence_events": [
+        34,
+        61,
+        67
+      ]
+    },
+    {
+      "id": "remote_cancel_acknowledged",
+      "scope": "implementation_policy",
+      "result": "pass",
+      "expected": "Acknowledged separately from local cancellation",
+      "actual": {
+        "childTaskId": "86d19753-15d9-4ff3-8fd9-879430cfe8e3",
+        "remoteState": "TASK_STATE_CANCELED",
+        "status": "acknowledged"
+      },
+      "evidence_events": [
+        35,
+        64
+      ]
+    },
+    {
+      "id": "no_remote_claim_before_ack",
+      "scope": "implementation_policy",
+      "result": "pass",
+      "expected": "Remote-canceled claim follows observed peer acknowledgment",
+      "actual": {
+        "ack_events": [
+          63
+        ],
+        "claim_events": [
+          70
+        ]
+      },
+      "evidence_events": [
+        5,
+        8,
+        12,
+        13,
+        17,
+        22,
+        23,
+        32,
+        33,
+        37,
+        38,
+        45,
+        47,
+        62,
+        63,
+        70,
+        71,
+        74,
+        75
+      ]
+    },
+    {
+      "id": "remote_pending_during_unavailability",
+      "scope": "implementation_policy",
+      "result": "pass",
+      "expected": "Remote outcome pending before recovery",
+      "actual": {
+        "contextId": "15f75faf-529b-4cdc-b2fc-30eadc095cf1",
+        "history": [
+          {
+            "messageId": "47a0bd99-5b8b-5d96-8e6b-d225cb07d444",
+            "parts": [
+              {
+                "data": {
+                  "priority": " HIGH ",
+                  "ticket_id": "INC-0042",
+                  "title": "  Checkout   returns  502  "
+                },
+                "mediaType": "application/json"
+              }
+            ],
+            "role": "ROLE_USER"
+          }
+        ],
+        "id": "9fa77dd0-583e-4491-9ddb-a06c78c914eb",
+        "metadata": {
+          "cancelRequested": true,
+          "cancellationAttempts": 1,
+          "childAgentUrl": "http://127.0.0.1:64954",
+          "childTaskId": "86d19753-15d9-4ff3-8fd9-879430cfe8e3",
+          "executionMode": "deterministic_mock_over_http",
+          "peerDeduplicationAssumed": false,
+          "remoteCancellation": {
+            "status": "pending"
+          },
+          "retrievalAttempts": 1,
+          "submissionAttempts": 1,
+          "submissionStarted": true,
+          "unsafeRetry": false
+        },
+        "status": {
+          "state": "TASK_STATE_CANCELED",
+          "timestamp": "2026-10-08T01:46:10.808Z"
+        }
+      },
+      "evidence_events": [
+        12,
+        22,
+        32,
+        35,
+        37,
+        41,
+        45,
+        62,
+        70,
+        74
+      ]
+    }
+  ],
+  "summary": {
+    "passed": 11,
+    "failed": 0,
+    "expected_negative_failures": 0,
+    "inconclusive": 0,
+    "unexpected_failed": 0
+  },
+  "verdict": "pass",
+  "verdict_meaning": "expected_scenario_outcomes; safety-policy failures and inconclusive outcomes remain explicit",
+  "not_checked": [
+    "official SDK",
+    "full conformance",
+    "production or crash recovery"
+  ],
+  "evidence_file": "events.jsonl"
+}

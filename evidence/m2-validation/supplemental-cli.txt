@@ -1,0 +1,1 @@
+Supplemental HTTP evidence: ambiguous submission retained 1 inconclusive outcome with no resend; corrupted peer response failed locally without retry. Both cases stopped their servers.

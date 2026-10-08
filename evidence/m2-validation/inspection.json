@@ -1,0 +1,332 @@
+{
+  "checked_at_utc": "2026-10-08T01:47:54.010202+00:00",
+  "python": "3.11.9",
+  "sqlite": "3.45.1",
+  "core_count": 8,
+  "supplemental_count": 2,
+  "closed_port_observations": 20,
+  "assertions_passed": true,
+  "cases": [
+    {
+      "scenario": "happy-path",
+      "events": 43,
+      "checks": {
+        "passed": 10,
+        "failed": 0
+      },
+      "stores": {
+        "coordinator": {
+          "task_count": 1,
+          "submission_count": 1,
+          "states": [
+            "TASK_STATE_COMPLETED"
+          ]
+        },
+        "normalizer": {
+          "task_count": 1,
+          "submission_count": 1,
+          "states": [
+            "TASK_STATE_COMPLETED"
+          ]
+        }
+      },
+      "failed_safety_checks_retained": [],
+      "closed_origins_observed": [
+        "http://127.0.0.1:64893",
+        "http://127.0.0.1:64892"
+      ]
+    },
+    {
+      "scenario": "duplicate-request",
+      "events": 53,
+      "checks": {
+        "passed": 8,
+        "failed": 0,
+        "expected_negative_failures": 0,
+        "inconclusive": 0,
+        "unexpected_failed": 0
+      },
+      "stores": {
+        "coordinator": {
+          "task_count": 1,
+          "submission_count": 1,
+          "states": [
+            "TASK_STATE_COMPLETED"
+          ]
+        },
+        "normalizer": {
+          "task_count": 1,
+          "submission_count": 1,
+          "states": [
+            "TASK_STATE_COMPLETED"
+          ]
+        }
+      },
+      "failed_safety_checks_retained": [],
+      "closed_origins_observed": [
+        "http://127.0.0.1:64904",
+        "http://127.0.0.1:64903"
+      ]
+    },
+    {
+      "scenario": "lost-ack",
+      "events": 50,
+      "checks": {
+        "passed": 10,
+        "failed": 0,
+        "expected_negative_failures": 0,
+        "inconclusive": 0,
+        "unexpected_failed": 0
+      },
+      "stores": {
+        "coordinator": {
+          "task_count": 1,
+          "submission_count": 1,
+          "states": [
+            "TASK_STATE_COMPLETED"
+          ]
+        },
+        "normalizer": {
+          "task_count": 1,
+          "submission_count": 1,
+          "states": [
+            "TASK_STATE_COMPLETED"
+          ]
+        }
+      },
+      "failed_safety_checks_retained": [],
+      "closed_origins_observed": [
+        "http://127.0.0.1:64917",
+        "http://127.0.0.1:64916"
+      ]
+    },
+    {
+      "scenario": "delayed-after-cancel",
+      "events": 61,
+      "checks": {
+        "passed": 11,
+        "failed": 0,
+        "expected_negative_failures": 0,
+        "inconclusive": 0,
+        "unexpected_failed": 0
+      },
+      "stores": {
+        "coordinator": {
+          "task_count": 1,
+          "submission_count": 1,
+          "states": [
+            "TASK_STATE_CANCELED"
+          ]
+        },
+        "normalizer": {
+          "task_count": 1,
+          "submission_count": 1,
+          "states": [
+            "TASK_STATE_CANCELED"
+          ]
+        }
+      },
+      "failed_safety_checks_retained": [],
+      "closed_origins_observed": [
+        "http://127.0.0.1:64930",
+        "http://127.0.0.1:64929"
+      ]
+    },
+    {
+      "scenario": "peer-unavailable-recovers",
+      "events": 63,
+      "checks": {
+        "passed": 9,
+        "failed": 0,
+        "expected_negative_failures": 0,
+        "inconclusive": 0,
+        "unexpected_failed": 0
+      },
+      "stores": {
+        "coordinator": {
+          "task_count": 1,
+          "submission_count": 1,
+          "states": [
+            "TASK_STATE_COMPLETED"
+          ]
+        },
+        "normalizer": {
+          "task_count": 1,
+          "submission_count": 1,
+          "states": [
+            "TASK_STATE_COMPLETED"
+          ]
+        }
+      },
+      "failed_safety_checks_retained": [],
+      "closed_origins_observed": [
+        "http://127.0.0.1:64942",
+        "http://127.0.0.1:64941"
+      ]
+    },
+    {
+      "scenario": "cancel-unavailable-recovers",
+      "events": 77,
+      "checks": {
+        "passed": 11,
+        "failed": 0,
+        "expected_negative_failures": 0,
+        "inconclusive": 0,
+        "unexpected_failed": 0
+      },
+      "stores": {
+        "coordinator": {
+          "task_count": 1,
+          "submission_count": 1,
+          "states": [
+            "TASK_STATE_CANCELED"
+          ]
+        },
+        "normalizer": {
+          "task_count": 1,
+          "submission_count": 1,
+          "states": [
+            "TASK_STATE_CANCELED"
+          ]
+        }
+      },
+      "failed_safety_checks_retained": [],
+      "closed_origins_observed": [
+        "http://127.0.0.1:64955",
+        "http://127.0.0.1:64954"
+      ]
+    },
+    {
+      "scenario": "recovery-exhausted",
+      "events": 56,
+      "checks": {
+        "passed": 10,
+        "failed": 0,
+        "expected_negative_failures": 0,
+        "inconclusive": 0,
+        "unexpected_failed": 0
+      },
+      "stores": {
+        "coordinator": {
+          "task_count": 1,
+          "submission_count": 1,
+          "states": [
+            "TASK_STATE_FAILED"
+          ]
+        },
+        "normalizer": {
+          "task_count": 1,
+          "submission_count": 1,
+          "states": [
+            "TASK_STATE_COMPLETED"
+          ]
+        }
+      },
+      "failed_safety_checks_retained": [],
+      "closed_origins_observed": [
+        "http://127.0.0.1:64971",
+        "http://127.0.0.1:64970"
+      ]
+    },
+    {
+      "scenario": "unsafe-retry-baseline",
+      "events": 54,
+      "checks": {
+        "passed": 9,
+        "failed": 1,
+        "expected_negative_failures": 1,
+        "inconclusive": 0,
+        "unexpected_failed": 0
+      },
+      "stores": {
+        "coordinator": {
+          "task_count": 1,
+          "submission_count": 1,
+          "states": [
+            "TASK_STATE_COMPLETED"
+          ]
+        },
+        "normalizer": {
+          "task_count": 2,
+          "submission_count": 0,
+          "states": [
+            "TASK_STATE_COMPLETED",
+            "TASK_STATE_COMPLETED"
+          ]
+        }
+      },
+      "failed_safety_checks_retained": [
+        "no_duplicate_peer_tasks"
+      ],
+      "closed_origins_observed": [
+        "http://127.0.0.1:64984",
+        "http://127.0.0.1:64983"
+      ]
+    },
+    {
+      "scenario": "ambiguous-submission",
+      "events": 39,
+      "checks": {
+        "passed": 10,
+        "failed": 0,
+        "expected_negative_failures": 0,
+        "inconclusive": 1,
+        "unexpected_failed": 0
+      },
+      "stores": {
+        "coordinator": {
+          "task_count": 1,
+          "submission_count": 1,
+          "states": [
+            "TASK_STATE_FAILED"
+          ]
+        },
+        "normalizer": {
+          "task_count": 1,
+          "submission_count": 1,
+          "states": [
+            "TASK_STATE_COMPLETED"
+          ]
+        }
+      },
+      "failed_safety_checks_retained": [],
+      "closed_origins_observed": [
+        "http://127.0.0.1:61882",
+        "http://127.0.0.1:61881"
+      ]
+    },
+    {
+      "scenario": "invalid-peer-response",
+      "events": 38,
+      "checks": {
+        "passed": 8,
+        "failed": 0,
+        "expected_negative_failures": 0,
+        "inconclusive": 0,
+        "unexpected_failed": 0
+      },
+      "stores": {
+        "coordinator": {
+          "task_count": 1,
+          "submission_count": 1,
+          "states": [
+            "TASK_STATE_FAILED"
+          ]
+        },
+        "normalizer": {
+          "task_count": 1,
+          "submission_count": 1,
+          "states": [
+            "TASK_STATE_COMPLETED"
+          ]
+        }
+      },
+      "failed_safety_checks_retained": [],
+      "closed_origins_observed": [
+        "http://127.0.0.1:61891",
+        "http://127.0.0.1:61890"
+      ]
+    }
+  ],
+  "core_report_sha256": "5cc3af62280d0cd9f184e86d5e1bd909814fdf50a3d93f7e99fa8eae9b0e1dd3"
+}

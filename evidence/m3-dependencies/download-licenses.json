@@ -1,0 +1,410 @@
+{
+  "checked_at_utc": "2026-10-08T02:13:03.643309+00:00",
+  "actual_unique_wheel_download_bytes": 16498589,
+  "unique_wheel_count": 35,
+  "license_files": [
+    {
+      "package": "a2a-sdk",
+      "version": "1.1.5",
+      "source_wheel": "a2a_sdk-1.1.5-py3-none-any.whl",
+      "archive_path": "a2a/server/tasks/copying_task_store.py",
+      "retained_path": "third_party/sdk-licenses/a2a-sdk-1.1.5/8ad58640b083-copying_task_store.py",
+      "sha256": "8ad58640b0835fbed39543e80148f8768051fcfe5398a26bec1fa0139190a062"
+    },
+    {
+      "package": "a2a-sdk",
+      "version": "1.1.5",
+      "source_wheel": "a2a_sdk-1.1.5-py3-none-any.whl",
+      "archive_path": "a2a_sdk-1.1.5.dist-info/licenses/LICENSE",
+      "retained_path": "third_party/sdk-licenses/a2a-sdk-1.1.5/cfc7749b96f6-LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "package": "aiologic",
+      "version": "0.17.1",
+      "source_url": "https://raw.githubusercontent.com/x42005e1f/aiologic/a3051c56f0b8a420780bbca17dcff5ac926eff88/LICENSES/ISC.txt",
+      "source_commit": "a3051c56f0b8a420780bbca17dcff5ac926eff88",
+      "wheel_omits_license_files": true,
+      "retained_path": "third_party/sdk-licenses/aiologic-0.17.1/ISC.txt",
+      "sha256": "f2ec607f67bb0dd3053b49835b02110d5cd0f8eb6da3aac4dc0b142a6b299be9"
+    },
+    {
+      "package": "aiologic",
+      "version": "0.17.1",
+      "source_url": "https://raw.githubusercontent.com/x42005e1f/aiologic/a3051c56f0b8a420780bbca17dcff5ac926eff88/LICENSES/0BSD.txt",
+      "source_commit": "a3051c56f0b8a420780bbca17dcff5ac926eff88",
+      "wheel_omits_license_files": true,
+      "retained_path": "third_party/sdk-licenses/aiologic-0.17.1/0BSD.txt",
+      "sha256": "e3f18c71e10d673590eb9856c1d79dd3b4b0d65404efb5e8584dbede7edd608b"
+    },
+    {
+      "package": "aiologic",
+      "version": "0.17.1",
+      "source_url": "https://raw.githubusercontent.com/x42005e1f/aiologic/a3051c56f0b8a420780bbca17dcff5ac926eff88/LICENSES/CC-BY-4.0.txt",
+      "source_commit": "a3051c56f0b8a420780bbca17dcff5ac926eff88",
+      "wheel_omits_license_files": true,
+      "retained_path": "third_party/sdk-licenses/aiologic-0.17.1/CC-BY-4.0.txt",
+      "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+    },
+    {
+      "package": "aiologic",
+      "version": "0.17.1",
+      "source_url": "https://raw.githubusercontent.com/x42005e1f/aiologic/a3051c56f0b8a420780bbca17dcff5ac926eff88/LICENSES/CC0-1.0.txt",
+      "source_commit": "a3051c56f0b8a420780bbca17dcff5ac926eff88",
+      "wheel_omits_license_files": true,
+      "retained_path": "third_party/sdk-licenses/aiologic-0.17.1/CC0-1.0.txt",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+    },
+    {
+      "package": "annotated-types",
+      "version": "0.8.0",
+      "source_wheel": "annotated_types-0.8.0-py3-none-any.whl",
+      "archive_path": "annotated_types-0.8.0.dist-info/licenses/LICENSE",
+      "retained_path": "third_party/sdk-licenses/annotated-types-0.8.0/fe1049884b1a-LICENSE",
+      "sha256": "fe1049884b1a0d9342901e88e07f32925d24b3121d9972b6a6805fb9824b095d"
+    },
+    {
+      "package": "anyio",
+      "version": "4.15.1",
+      "source_wheel": "anyio-4.15.1-py3-none-any.whl",
+      "archive_path": "anyio-4.15.1.dist-info/licenses/LICENSE",
+      "retained_path": "third_party/sdk-licenses/anyio-4.15.1/5361ac9dc58f-LICENSE",
+      "sha256": "5361ac9dc58f2ef5fd2e9b09c68297c17f04950909bbc8023bdb82eacf22c2b0"
+    },
+    {
+      "package": "certifi",
+      "version": "2026.7.22",
+      "source_wheel": "certifi-2026.7.22-py3-none-any.whl",
+      "archive_path": "certifi-2026.7.22.dist-info/licenses/LICENSE",
+      "retained_path": "third_party/sdk-licenses/certifi-2026.7.22/e93716da6b9c-LICENSE",
+      "sha256": "e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7"
+    },
+    {
+      "package": "cffi",
+      "version": "2.1.1",
+      "source_wheel": "cffi-2.1.1-cp311-cp311-win_amd64.whl",
+      "archive_path": "cffi-2.1.1.dist-info/licenses/LICENSE",
+      "retained_path": "third_party/sdk-licenses/cffi-2.1.1/5ba24ddc5706-LICENSE",
+      "sha256": "5ba24ddc57067f9249add644c3afc41a5d6dc37e23433ef759d95df370b0af63"
+    },
+    {
+      "package": "charset-normalizer",
+      "version": "3.5.2",
+      "source_wheel": "charset_normalizer-3.5.2-py3-none-any.whl",
+      "archive_path": "charset_normalizer-3.5.2.dist-info/licenses/LICENSE",
+      "retained_path": "third_party/sdk-licenses/charset-normalizer-3.5.2/6d0d41bfe170-LICENSE",
+      "sha256": "6d0d41bfe170ac6c7dc248c9a63e254d0fb45a60d50a8257d0af92c6e249b887"
+    },
+    {
+      "package": "cryptography",
+      "version": "50.0.2",
+      "source_wheel": "cryptography-50.0.2-cp311-abi3-win_amd64.whl",
+      "archive_path": "cryptography-50.0.2.dist-info/licenses/LICENSE",
+      "retained_path": "third_party/sdk-licenses/cryptography-50.0.2/3e0c7c091a94-LICENSE",
+      "sha256": "3e0c7c091a948b82533ba98fd7cbb40432d6f1a9acbf85f5922d2f99a93ae6bb"
+    },
+    {
+      "package": "cryptography",
+      "version": "50.0.2",
+      "source_wheel": "cryptography-50.0.2-cp311-abi3-win_amd64.whl",
+      "archive_path": "cryptography-50.0.2.dist-info/licenses/LICENSE.APACHE",
+      "retained_path": "third_party/sdk-licenses/cryptography-50.0.2/aac73b3148f6-LICENSE.APACHE",
+      "sha256": "aac73b3148f6d1d7111dbca32099f68d26c644c6813ae1e4f05f6579aa2663fe"
+    },
+    {
+      "package": "cryptography",
+      "version": "50.0.2",
+      "source_wheel": "cryptography-50.0.2-cp311-abi3-win_amd64.whl",
+      "archive_path": "cryptography-50.0.2.dist-info/licenses/LICENSE.BSD",
+      "retained_path": "third_party/sdk-licenses/cryptography-50.0.2/602c4c7482de-LICENSE.BSD",
+      "sha256": "602c4c7482de6479dd2e9793cda275e5e63d773dacd1eca689232ab7008fb4fb"
+    },
+    {
+      "package": "culsans",
+      "version": "0.11.0",
+      "source_url": "https://raw.githubusercontent.com/x42005e1f/culsans/56e826068fa91e5ad868e8d5108495201745c587/LICENSES/ISC.txt",
+      "source_commit": "56e826068fa91e5ad868e8d5108495201745c587",
+      "wheel_omits_license_files": true,
+      "retained_path": "third_party/sdk-licenses/culsans-0.11.0/ISC.txt",
+      "sha256": "f2ec607f67bb0dd3053b49835b02110d5cd0f8eb6da3aac4dc0b142a6b299be9"
+    },
+    {
+      "package": "culsans",
+      "version": "0.11.0",
+      "source_url": "https://raw.githubusercontent.com/x42005e1f/culsans/56e826068fa91e5ad868e8d5108495201745c587/LICENSES/0BSD.txt",
+      "source_commit": "56e826068fa91e5ad868e8d5108495201745c587",
+      "wheel_omits_license_files": true,
+      "retained_path": "third_party/sdk-licenses/culsans-0.11.0/0BSD.txt",
+      "sha256": "e3f18c71e10d673590eb9856c1d79dd3b4b0d65404efb5e8584dbede7edd608b"
+    },
+    {
+      "package": "culsans",
+      "version": "0.11.0",
+      "source_url": "https://raw.githubusercontent.com/x42005e1f/culsans/56e826068fa91e5ad868e8d5108495201745c587/LICENSES/CC-BY-4.0.txt",
+      "source_commit": "56e826068fa91e5ad868e8d5108495201745c587",
+      "wheel_omits_license_files": true,
+      "retained_path": "third_party/sdk-licenses/culsans-0.11.0/CC-BY-4.0.txt",
+      "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+    },
+    {
+      "package": "culsans",
+      "version": "0.11.0",
+      "source_url": "https://raw.githubusercontent.com/x42005e1f/culsans/56e826068fa91e5ad868e8d5108495201745c587/LICENSES/CC0-1.0.txt",
+      "source_commit": "56e826068fa91e5ad868e8d5108495201745c587",
+      "wheel_omits_license_files": true,
+      "retained_path": "third_party/sdk-licenses/culsans-0.11.0/CC0-1.0.txt",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+    },
+    {
+      "package": "google-api-core",
+      "version": "2.41.0",
+      "source_wheel": "google_api_core-2.41.0-py3-none-any.whl",
+      "archive_path": "google_api_core-2.41.0.dist-info/licenses/LICENSE",
+      "retained_path": "third_party/sdk-licenses/google-api-core-2.41.0/cfc7749b96f6-LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "package": "google-auth",
+      "version": "2.61.0",
+      "source_wheel": "google_auth-2.61.0-py3-none-any.whl",
+      "archive_path": "google_auth-2.61.0.dist-info/licenses/LICENSE",
+      "retained_path": "third_party/sdk-licenses/google-auth-2.61.0/c71d239df917-LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "package": "googleapis-common-protos",
+      "version": "1.75.5",
+      "source_wheel": "googleapis_common_protos-1.75.5-py3-none-any.whl",
+      "archive_path": "googleapis_common_protos-1.75.5.dist-info/licenses/LICENSE",
+      "retained_path": "third_party/sdk-licenses/googleapis-common-protos-1.75.5/cfc7749b96f6-LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "package": "h11",
+      "version": "0.16.0",
+      "source_wheel": "h11-0.16.0-py3-none-any.whl",
+      "archive_path": "h11-0.16.0.dist-info/licenses/LICENSE.txt",
+      "retained_path": "third_party/sdk-licenses/h11-0.16.0/37db5bb85926-LICENSE.txt",
+      "sha256": "37db5bb85926db28a427a25867f10b1232003aea1be69ccb851138adb8e6f361"
+    },
+    {
+      "package": "httpcore",
+      "version": "1.0.9",
+      "source_wheel": "httpcore-1.0.9-py3-none-any.whl",
+      "archive_path": "httpcore-1.0.9.dist-info/licenses/LICENSE.md",
+      "retained_path": "third_party/sdk-licenses/httpcore-1.0.9/fdcb59154c74-LICENSE.md",
+      "sha256": "fdcb59154c74cbaba16a11242f7740bea9f23d6feb5547917d8c5f94a80392a5"
+    },
+    {
+      "package": "httpx",
+      "version": "0.28.1",
+      "source_wheel": "httpx-0.28.1-py3-none-any.whl",
+      "archive_path": "httpx-0.28.1.dist-info/licenses/LICENSE.md",
+      "retained_path": "third_party/sdk-licenses/httpx-0.28.1/4ec59d544f12-LICENSE.md",
+      "sha256": "4ec59d544f12b5f539a3a716fd321ac58ccd8030b465221f2c880200cdf28d8d"
+    },
+    {
+      "package": "idna",
+      "version": "3.20",
+      "source_wheel": "idna-3.20-py3-none-any.whl",
+      "archive_path": "idna-3.20.dist-info/licenses/LICENSE.md",
+      "retained_path": "third_party/sdk-licenses/idna-3.20/1a9a4f0e3d47-LICENSE.md",
+      "sha256": "1a9a4f0e3d479a27240ddd59a9137a66ab4a0f9dfdc8ca6188cc0bfd85187f04"
+    },
+    {
+      "package": "json-rpc",
+      "version": "1.15.0",
+      "source_wheel": "json_rpc-1.15.0-py2.py3-none-any.whl",
+      "archive_path": "json_rpc-1.15.0.dist-info/LICENSE.txt",
+      "retained_path": "third_party/sdk-licenses/json-rpc-1.15.0/65d2a4421f8d-LICENSE.txt",
+      "sha256": "65d2a4421f8d862eae81a9ce8ceaf16a264412e849ed654f75606fe5de6e8e4a"
+    },
+    {
+      "package": "opentelemetry-api",
+      "version": "1.45.1",
+      "source_wheel": "opentelemetry_api-1.45.1-py3-none-any.whl",
+      "archive_path": "opentelemetry_api-1.45.1.dist-info/licenses/LICENSE",
+      "retained_path": "third_party/sdk-licenses/opentelemetry-api-1.45.1/c71d239df917-LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "package": "packaging",
+      "version": "26.3",
+      "source_wheel": "packaging-26.3-py3-none-any.whl",
+      "archive_path": "packaging/licenses/__init__.py",
+      "retained_path": "third_party/sdk-licenses/packaging-26.3/590d12eee73d-__init__.py",
+      "sha256": "590d12eee73ddbec53b4e9ee5bfc64d9cb3aacb4940e8ebcba260757ce56740b"
+    },
+    {
+      "package": "packaging",
+      "version": "26.3",
+      "source_wheel": "packaging-26.3-py3-none-any.whl",
+      "archive_path": "packaging/licenses/_spdx.py",
+      "retained_path": "third_party/sdk-licenses/packaging-26.3/596ec35e2ca0-_spdx.py",
+      "sha256": "596ec35e2ca0ebcba9fd8343ff0a51625af548786257815f24b41f7e08613314"
+    },
+    {
+      "package": "packaging",
+      "version": "26.3",
+      "source_wheel": "packaging-26.3-py3-none-any.whl",
+      "archive_path": "packaging-26.3.dist-info/licenses/LICENSE",
+      "retained_path": "third_party/sdk-licenses/packaging-26.3/cad1ef5bd340-LICENSE",
+      "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+    },
+    {
+      "package": "packaging",
+      "version": "26.3",
+      "source_wheel": "packaging-26.3-py3-none-any.whl",
+      "archive_path": "packaging-26.3.dist-info/licenses/LICENSE.APACHE",
+      "retained_path": "third_party/sdk-licenses/packaging-26.3/0d542e0c8804-LICENSE.APACHE",
+      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+    },
+    {
+      "package": "packaging",
+      "version": "26.3",
+      "source_wheel": "packaging-26.3-py3-none-any.whl",
+      "archive_path": "packaging-26.3.dist-info/licenses/LICENSE.BSD",
+      "retained_path": "third_party/sdk-licenses/packaging-26.3/b70e7e9b742f-LICENSE.BSD",
+      "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+    },
+    {
+      "package": "proto-plus",
+      "version": "1.29.0",
+      "source_wheel": "proto_plus-1.29.0-py3-none-any.whl",
+      "archive_path": "proto_plus-1.29.0.dist-info/licenses/LICENSE",
+      "retained_path": "third_party/sdk-licenses/proto-plus-1.29.0/cfc7749b96f6-LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "package": "protobuf",
+      "version": "7.36.2",
+      "source_wheel": "protobuf-7.36.2-py3-none-any.whl",
+      "archive_path": "protobuf-7.36.2.dist-info/LICENSE",
+      "retained_path": "third_party/sdk-licenses/protobuf-7.36.2/6e5e117324af-LICENSE",
+      "sha256": "6e5e117324afd944dcf67f36cf329843bc1a92229a8cd9bb573d7a83130fea7d"
+    },
+    {
+      "package": "pyasn1",
+      "version": "0.6.4",
+      "source_wheel": "pyasn1-0.6.4-py3-none-any.whl",
+      "archive_path": "pyasn1-0.6.4.dist-info/licenses/LICENSE.rst",
+      "retained_path": "third_party/sdk-licenses/pyasn1-0.6.4/2aad5fc00f70-LICENSE.rst",
+      "sha256": "2aad5fc00f705c4a1addb83eed10a6a75d286a3779f0cf8519d87e62bc4735fd"
+    },
+    {
+      "package": "pyasn1-modules",
+      "version": "0.4.2",
+      "source_wheel": "pyasn1_modules-0.4.2-py3-none-any.whl",
+      "archive_path": "pyasn1_modules-0.4.2.dist-info/licenses/LICENSE.txt",
+      "retained_path": "third_party/sdk-licenses/pyasn1-modules-0.4.2/2aad5fc00f70-LICENSE.txt",
+      "sha256": "2aad5fc00f705c4a1addb83eed10a6a75d286a3779f0cf8519d87e62bc4735fd"
+    },
+    {
+      "package": "pycparser",
+      "version": "3.0",
+      "source_wheel": "pycparser-3.0-py3-none-any.whl",
+      "archive_path": "pycparser-3.0.dist-info/licenses/LICENSE",
+      "retained_path": "third_party/sdk-licenses/pycparser-3.0/0c846399369e-LICENSE",
+      "sha256": "0c846399369ea76ddd7b5c44fe6d16497415fcf015f5cbb508c24bf98b81c5b1"
+    },
+    {
+      "package": "pydantic",
+      "version": "2.13.5",
+      "source_wheel": "pydantic-2.13.5-py3-none-any.whl",
+      "archive_path": "pydantic-2.13.5.dist-info/licenses/LICENSE",
+      "retained_path": "third_party/sdk-licenses/pydantic-2.13.5/a9e186f3ca16-LICENSE",
+      "sha256": "a9e186f3ca16b5eef84318e7a701721351a00cb7b8ae3a4394b67b49e3529ef3"
+    },
+    {
+      "package": "pydantic-core",
+      "version": "2.46.5",
+      "source_wheel": "pydantic_core-2.46.5-cp311-cp311-win_amd64.whl",
+      "archive_path": "pydantic_core-2.46.5.dist-info/licenses/LICENSE",
+      "retained_path": "third_party/sdk-licenses/pydantic-core-2.46.5/fbe7f615f18d-LICENSE",
+      "sha256": "fbe7f615f18d135c07000e5a86325db27f42c7729699ef166ac1f7a3f4586bf4"
+    },
+    {
+      "package": "pydantic-core",
+      "version": "2.46.5",
+      "source_wheel": "pydantic_core-2.46.5-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "archive_path": "pydantic_core-2.46.5.dist-info/licenses/LICENSE",
+      "retained_path": "third_party/sdk-licenses/pydantic-core-2.46.5/2afdd30d54b4-LICENSE",
+      "sha256": "2afdd30d54b4d62b6f488a6bcc1546e84ec5061f13f4209c03d012348783795a"
+    },
+    {
+      "package": "requests",
+      "version": "2.34.2",
+      "source_wheel": "requests-2.34.2-py3-none-any.whl",
+      "archive_path": "requests-2.34.2.dist-info/licenses/LICENSE",
+      "retained_path": "third_party/sdk-licenses/requests-2.34.2/09e8a9bcec80-LICENSE",
+      "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b"
+    },
+    {
+      "package": "requests",
+      "version": "2.34.2",
+      "source_wheel": "requests-2.34.2-py3-none-any.whl",
+      "archive_path": "requests-2.34.2.dist-info/licenses/NOTICE",
+      "retained_path": "third_party/sdk-licenses/requests-2.34.2/f5110972deda-NOTICE",
+      "sha256": "f5110972dedad2b4e9d314518daf3b7d72d6e02e499acd802181de6f74571dcc"
+    },
+    {
+      "package": "sniffio",
+      "version": "1.3.1",
+      "source_wheel": "sniffio-1.3.1-py3-none-any.whl",
+      "archive_path": "sniffio-1.3.1.dist-info/LICENSE",
+      "retained_path": "third_party/sdk-licenses/sniffio-1.3.1/652c878488d1-LICENSE",
+      "sha256": "652c878488d1456361e08c3f8607fd7ba59892a14103d15cce4ff93c85b5cc8b"
+    },
+    {
+      "package": "sniffio",
+      "version": "1.3.1",
+      "source_wheel": "sniffio-1.3.1-py3-none-any.whl",
+      "archive_path": "sniffio-1.3.1.dist-info/LICENSE.APACHE2",
+      "retained_path": "third_party/sdk-licenses/sniffio-1.3.1/cfc7749b96f6-LICENSE.APACHE2",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "package": "sniffio",
+      "version": "1.3.1",
+      "source_wheel": "sniffio-1.3.1-py3-none-any.whl",
+      "archive_path": "sniffio-1.3.1.dist-info/LICENSE.MIT",
+      "retained_path": "third_party/sdk-licenses/sniffio-1.3.1/3e6dae555eb9-LICENSE.MIT",
+      "sha256": "3e6dae555eb92787fc82d1d48355677f454c7f65aeb38d3f9e72bf9a3daf034b"
+    },
+    {
+      "package": "typing-extensions",
+      "version": "4.16.0",
+      "source_wheel": "typing_extensions-4.16.0-py3-none-any.whl",
+      "archive_path": "typing_extensions-4.16.0.dist-info/licenses/LICENSE",
+      "retained_path": "third_party/sdk-licenses/typing-extensions-4.16.0/3b2f81fe21d1-LICENSE",
+      "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf"
+    },
+    {
+      "package": "typing-inspection",
+      "version": "0.4.4",
+      "source_wheel": "typing_inspection-0.4.4-py3-none-any.whl",
+      "archive_path": "typing_inspection-0.4.4.dist-info/licenses/LICENSE",
+      "retained_path": "third_party/sdk-licenses/typing-inspection-0.4.4/804b59b25f2c-LICENSE",
+      "sha256": "804b59b25f2c31bd278f9202a19ae49a3945aa2664387e2d0a128c7cacc61ec3"
+    },
+    {
+      "package": "urllib3",
+      "version": "2.8.0",
+      "source_wheel": "urllib3-2.8.0-py3-none-any.whl",
+      "archive_path": "urllib3-2.8.0.dist-info/licenses/LICENSE.txt",
+      "retained_path": "third_party/sdk-licenses/urllib3-2.8.0/130e3a64d5fd-LICENSE.txt",
+      "sha256": "130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686"
+    },
+    {
+      "package": "wrapt",
+      "version": "2.5.0",
+      "source_wheel": "wrapt-2.5.0-py3-none-any.whl",
+      "archive_path": "wrapt-2.5.0.dist-info/licenses/LICENSE",
+      "retained_path": "third_party/sdk-licenses/wrapt-2.5.0/d4f66854a24d-LICENSE",
+      "sha256": "d4f66854a24dda2f2a5282912aedebe6b18186b86284510a433d78fadcd88e5d"
+    }
+  ],
+  "free_gib_after_download": 25.11,
+  "wheel_only": true,
+  "linux_execution": "not_executed"
+}

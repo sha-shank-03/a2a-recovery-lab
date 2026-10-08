@@ -1,0 +1,18 @@
+{
+  "slug": "a2a-recovery-lab",
+  "label": "final-main-sdk-health",
+  "argv": [
+    "<local-portfolio>\\a2a-recovery-lab\\work\\sdk-check-venv\\Scripts\\python.exe",
+    "-m",
+    "pip",
+    "check"
+  ],
+  "cwd": "<local-portfolio>\\a2a-recovery-lab",
+  "started_at_utc": "2026-10-08T02:38:18.719373+00:00",
+  "duration_seconds": 0.796,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout": "No broken requirements found.\n",
+  "stderr": "",
+  "scope": "independently executed by main; result alone does not imply full acceptance"
+}

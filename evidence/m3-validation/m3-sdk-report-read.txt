@@ -1,0 +1,4 @@
+PASS installed official SDK 1.1.5 | deterministic_mock_over_http | spec=1.0.1 wire=1.0
+Checks: 26 passed, 0 failed
+Scope: installed SDK JSONRPC/protobuf interactions; full conformance not checked.
+Mode: recorded_report_read; no fresh agent execution

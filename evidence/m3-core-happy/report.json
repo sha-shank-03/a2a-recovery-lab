@@ -1,0 +1,344 @@
+{
+  "report_schema": "1.0",
+  "implementation_version": "0.2.0",
+  "milestone": "M2",
+  "scenario": "happy-path",
+  "seed": 7,
+  "execution_mode": "deterministic_mock_over_http",
+  "protocol_spec": "1.0.1",
+  "protocol_wire": "1.0",
+  "protocol_commit": "3303592588e388e62e0f69f701af531d2f4e3991",
+  "coverage": [
+    "AgentCard",
+    "SendMessage",
+    "GetTask"
+  ],
+  "not_checked": [
+    "cancellation in this run",
+    "fault recovery in this run",
+    "ListTasks in this run",
+    "official SDK",
+    "full conformance"
+  ],
+  "agents": {
+    "coordinator": "http://127.0.0.1:63254",
+    "normalizer": "http://127.0.0.1:63253"
+  },
+  "tasks": {
+    "parent": {
+      "artifacts": [
+        {
+          "artifactId": "6da0b92e-d42b-4f46-90e6-bfc4b2e6995d",
+          "name": "coordinated-ticket",
+          "parts": [
+            {
+              "data": {
+                "childArtifactId": "97ed2fcc-05f4-4097-a3f0-177ddcd543b7",
+                "childTaskId": "f8915b26-6141-408e-99da-754a3716937d",
+                "normalizedTicket": {
+                  "input_sha256": "d37e90ba1e3f588afb51f9eb954856269c6eb06deb9e8247e2fd8dfce98ed027",
+                  "priority": "high",
+                  "ticket_id": "INC-0042",
+                  "title": "Checkout returns 502"
+                }
+              },
+              "mediaType": "application/json"
+            }
+          ]
+        }
+      ],
+      "contextId": "a37ea9b1-d6f1-4861-a296-611fbb983b89",
+      "history": [
+        {
+          "messageId": "56f5faa2-2fca-5f6a-8754-28fd2f3c4ea2",
+          "parts": [
+            {
+              "data": {
+                "priority": " HIGH ",
+                "ticket_id": "INC-0042",
+                "title": "  Checkout   returns  502  "
+              },
+              "mediaType": "application/json"
+            }
+          ],
+          "role": "ROLE_USER"
+        }
+      ],
+      "id": "a50da75e-fc7b-4837-b2c0-464b42518fc6",
+      "metadata": {
+        "childAgentUrl": "http://127.0.0.1:63253",
+        "childArtifactId": "97ed2fcc-05f4-4097-a3f0-177ddcd543b7",
+        "childTaskId": "f8915b26-6141-408e-99da-754a3716937d",
+        "executionMode": "deterministic_mock_over_http",
+        "peerDeduplicationAssumed": false,
+        "retrievalAttempts": 1,
+        "submissionAttempts": 1,
+        "submissionStarted": true,
+        "unsafeRetry": false
+      },
+      "status": {
+        "state": "TASK_STATE_COMPLETED",
+        "timestamp": "2026-10-08T02:27:13.314Z"
+      }
+    },
+    "child": {
+      "artifacts": [
+        {
+          "artifactId": "97ed2fcc-05f4-4097-a3f0-177ddcd543b7",
+          "name": "normalized-ticket",
+          "parts": [
+            {
+              "data": {
+                "input_sha256": "d37e90ba1e3f588afb51f9eb954856269c6eb06deb9e8247e2fd8dfce98ed027",
+                "priority": "high",
+                "ticket_id": "INC-0042",
+                "title": "Checkout returns 502"
+              },
+              "mediaType": "application/json"
+            }
+          ]
+        }
+      ],
+      "contextId": "a37ea9b1-d6f1-4861-a296-611fbb983b89",
+      "id": "f8915b26-6141-408e-99da-754a3716937d",
+      "metadata": {
+        "executionMode": "deterministic_mock_over_http"
+      },
+      "status": {
+        "state": "TASK_STATE_COMPLETED",
+        "timestamp": "2026-10-08T02:27:13.278Z"
+      }
+    }
+  },
+  "checks": [
+    {
+      "id": "two_http_endpoints",
+      "scope": "harness",
+      "result": "pass",
+      "expected": "Two different server endpoints receive JSON-RPC",
+      "actual": {
+        "origins": {
+          "coordinator": "http://127.0.0.1:63254",
+          "normalizer": "http://127.0.0.1:63253"
+        },
+        "receivers": [
+          "coordinator",
+          "normalizer"
+        ]
+      },
+      "evidence_events": [
+        1,
+        2,
+        10,
+        18,
+        28,
+        35,
+        39
+      ]
+    },
+    {
+      "id": "advertised_wire_version",
+      "scope": "protocol",
+      "result": "pass",
+      "expected": "1.0",
+      "actual": [
+        [
+          {
+            "protocolBinding": "JSONRPC",
+            "protocolVersion": "1.0",
+            "url": "http://127.0.0.1:63254/rpc"
+          }
+        ],
+        [
+          {
+            "protocolBinding": "JSONRPC",
+            "protocolVersion": "1.0",
+            "url": "http://127.0.0.1:63253/rpc"
+          }
+        ]
+      ],
+      "evidence_events": [
+        4,
+        7,
+        14
+      ],
+      "source": "https://github.com/a2aproject/A2A/blob/v1.0.1/docs/specification.md#36-versioning"
+    },
+    {
+      "id": "version_headers",
+      "scope": "protocol",
+      "result": "pass",
+      "expected": "Every observed RPC uses A2A-Version 1.0",
+      "actual": [
+        {
+          "A2A-Version": "1.0",
+          "Content-Type": "application/json"
+        },
+        {
+          "A2A-Version": "1.0",
+          "Content-Type": "application/json"
+        },
+        {
+          "A2A-Version": "1.0",
+          "Content-Type": "application/json"
+        },
+        {
+          "A2A-Version": "1.0",
+          "Content-Type": "application/json"
+        },
+        {
+          "A2A-Version": "1.0",
+          "Content-Type": "application/json"
+        }
+      ],
+      "evidence_events": [
+        10,
+        18,
+        28,
+        35,
+        39
+      ],
+      "source": "https://github.com/a2aproject/A2A/blob/v1.0.1/docs/specification.md#92-service-parameter-transmission"
+    },
+    {
+      "id": "default_send_blocks",
+      "scope": "protocol",
+      "result": "pass",
+      "expected": "Completed task in default blocking SendMessage result",
+      "actual": "TASK_STATE_COMPLETED",
+      "evidence_events": [
+        22,
+        24,
+        29,
+        31,
+        32,
+        36,
+        40
+      ],
+      "source": "https://github.com/a2aproject/A2A/blob/v1.0.1/docs/specification.md#322-sendmessageconfiguration"
+    },
+    {
+      "id": "get_task_completed",
+      "scope": "protocol",
+      "result": "pass",
+      "expected": "TASK_STATE_COMPLETED",
+      "actual": "TASK_STATE_COMPLETED",
+      "evidence_events": [
+        22,
+        29,
+        32,
+        36,
+        40
+      ],
+      "source": "https://github.com/a2aproject/A2A/blob/v1.0.1/docs/specification.md#313-get-task"
+    },
+    {
+      "id": "child_completed",
+      "scope": "protocol",
+      "result": "pass",
+      "expected": "TASK_STATE_COMPLETED",
+      "actual": "TASK_STATE_COMPLETED",
+      "evidence_events": [
+        22,
+        24,
+        29,
+        31,
+        32,
+        36,
+        40
+      ],
+      "source": "https://github.com/a2aproject/A2A/blob/v1.0.1/docs/specification.md#411-task"
+    },
+    {
+      "id": "literal_normalized_artifact",
+      "scope": "implementation_policy",
+      "result": "pass",
+      "expected": {
+        "ticket_id": "INC-0042",
+        "title": "Checkout returns 502",
+        "priority": "high",
+        "input_sha256": "d37e90ba1e3f588afb51f9eb954856269c6eb06deb9e8247e2fd8dfce98ed027"
+      },
+      "actual": {
+        "parent": {
+          "input_sha256": "d37e90ba1e3f588afb51f9eb954856269c6eb06deb9e8247e2fd8dfce98ed027",
+          "priority": "high",
+          "ticket_id": "INC-0042",
+          "title": "Checkout returns 502"
+        },
+        "child": {
+          "input_sha256": "d37e90ba1e3f588afb51f9eb954856269c6eb06deb9e8247e2fd8dfce98ed027",
+          "priority": "high",
+          "ticket_id": "INC-0042",
+          "title": "Checkout returns 502"
+        }
+      },
+      "evidence_events": [
+        21,
+        22,
+        29,
+        32,
+        36,
+        40
+      ]
+    },
+    {
+      "id": "parent_child_artifact_link",
+      "scope": "implementation_policy",
+      "result": "pass",
+      "expected": "Parent references the observed child task and artifact",
+      "actual": {
+        "parent_id": "a50da75e-fc7b-4837-b2c0-464b42518fc6",
+        "child_id": "f8915b26-6141-408e-99da-754a3716937d",
+        "child_artifact_id": "97ed2fcc-05f4-4097-a3f0-177ddcd543b7"
+      },
+      "evidence_events": [
+        22,
+        25,
+        29,
+        32,
+        36,
+        40
+      ]
+    },
+    {
+      "id": "one_mock_transformation",
+      "scope": "implementation_policy",
+      "result": "pass",
+      "expected": {
+        "transformations": 1,
+        "tasks_per_agent": 1
+      },
+      "actual": {
+        "transformations": 1,
+        "normalizer_tasks": 1,
+        "coordinator_tasks": 1
+      },
+      "evidence_events": [
+        11,
+        19,
+        21
+      ]
+    },
+    {
+      "id": "clean_teardown",
+      "scope": "harness",
+      "result": "pass",
+      "expected": true,
+      "actual": {
+        "normalizer": true,
+        "coordinator": true
+      },
+      "evidence_events": [
+        42,
+        43
+      ]
+    }
+  ],
+  "summary": {
+    "passed": 10,
+    "failed": 0
+  },
+  "verdict": "pass",
+  "evidence_file": "events.jsonl"
+}
